@@ -119,7 +119,7 @@ public class TelaRegistroView extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2)
-                        .addGap(78, 78, 78)
+                        .addGap(107, 107, 107)
                         .addComponent(jLabel3)))
                 .addGap(37, 37, 37))
         );

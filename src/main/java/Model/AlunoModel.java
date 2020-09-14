@@ -15,10 +15,8 @@ public class AlunoModel extends PessoaModel {
     private Calendar horarioDeTreino= Calendar.getInstance();
     private TreinoModel treino;
     
-    public AlunoModel(String nome, String cpf, String dataNascimento, int horarioDeTreino, int minutoDoTreino) {
+    public AlunoModel(String nome, String cpf, String dataNascimento) {
         super(nome, cpf, dataNascimento);
-        this.horarioDeTreino.set(Calendar.HOUR_OF_DAY, horarioDeTreino);
-        this.horarioDeTreino.set(Calendar.MINUTE, minutoDoTreino);
     }
 
     public Calendar getHorarioDeTreino() {
