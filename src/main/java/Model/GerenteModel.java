@@ -5,10 +5,9 @@
  */
 package Model;
 
-/**
- *
- * @author asg75
- */
+import javax.persistence.Entity;
+
+@Entity
 public class GerenteModel extends PessoaModel {
 
     public GerenteModel(String nome, String cpf, String dataNascimento) {

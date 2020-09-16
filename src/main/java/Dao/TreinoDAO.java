@@ -1,0 +1,44 @@
+
+package Dao;
+
+import Model.TreinoModel;
+
+
+public class TreinoDAO extends BaseDAO {
+
+    public TreinoDAO() {
+        super();
+    }
+    public void gravar(TreinoModel treino) {
+        try {
+            em.getTransaction().begin();
+            em.persist(treino);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            fecharConexao();
+        }
+    }
+    
+    public TreinoModel remover(int id){
+        TreinoModel treino = null;
+        try{
+
+           em.getTransaction().begin();
+           treino = em.find(TreinoModel.class,id );
+           em.remove(treino);
+           em.getTransaction().commit();
+
+        }catch(Exception e){
+           em.getTransaction().rollback();
+           e.printStackTrace();
+        }finally {
+            fecharConexao();
+        }
+       return treino;
+    }
+
+}
