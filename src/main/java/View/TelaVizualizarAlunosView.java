@@ -5,7 +5,7 @@
  */
 package View;
 
-import Model.AlunoModel;
+//import Model.AlunoModel;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -24,18 +24,18 @@ public class TelaVizualizarAlunosView extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void adicionarDadoTabela(ArrayList<AlunoModel> listaAlunos){
-        DefaultTableModel model = (DefaultTableModel)tabAlunos.getModel();
-        
-        for(AlunoModel Aluno:listaAlunos){
-            if(Aluno.getTreino() !=null){
-                model.addRow(new Object[]{Aluno.getNome(),Aluno.getTreino(),Aluno.getHorarioDeTreino().toString(),Aluno.getCpf()});
-            }
-            else{
-                model.addRow(new Object[]{Aluno.getNome(),"Aluno sem treino",Aluno.getHorarioDeTreino().toString(),Aluno.getCpf()});
-            }
-        }
-    }
+//    public void adicionarDadoTabela(ArrayList<AlunoModel> listaAlunos){
+//        DefaultTableModel model = (DefaultTableModel)tabAlunos.getModel();
+//        
+//        for(AlunoModel Aluno:listaAlunos){
+//            if(Aluno.getTreino() !=null){
+//                model.addRow(new Object[]{Aluno.getNome(),Aluno.getTreino(),Aluno.getHorarioDeTreino().toString(),Aluno.getCpf()});
+//            }
+//            else{
+//                model.addRow(new Object[]{Aluno.getNome(),"Aluno sem treino",Aluno.getHorarioDeTreino().toString(),Aluno.getCpf()});
+//            }
+//        }
+//    }
     public String getIdAlterarTreino(){
         return tfIdAlunoAlterarTreino.getText();
     }

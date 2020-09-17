@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
     
  @Entity
- @Table(name = "Treininhos")
+ @Table(name = "Treinos")
 public class TreinoModel implements Serializable {
       private static final long serialVersionUID = 1L;
 

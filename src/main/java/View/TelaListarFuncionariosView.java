@@ -5,7 +5,7 @@
  */
 package View;
 
-import Model.InstrutorModel;
+//import Model.InstrutorModel;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -32,13 +32,13 @@ public class TelaListarFuncionariosView extends javax.swing.JPanel {
         taPontos.setText(text);
     }
     
-    public void setDadosTable(ArrayList<InstrutorModel> listaFuncionarios){
-        DefaultTableModel model = (DefaultTableModel)tabFuncionarios.getModel();
-        
-        for(InstrutorModel instrutor:listaFuncionarios){
-            model.addRow(new Object[]{instrutor.getNome(), instrutor.getCpf()});
-        }
-    }
+//    public void setDadosTable(ArrayList<InstrutorModel> listaFuncionarios){
+//        DefaultTableModel model = (DefaultTableModel)tabFuncionarios.getModel();
+//        
+//        for(InstrutorModel instrutor:listaFuncionarios){
+//            model.addRow(new Object[]{instrutor.getNome(), instrutor.getCpf()});
+//        }
+//    };
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
