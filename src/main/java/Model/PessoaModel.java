@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Pessoas")
+@Table(name = "tablepessoa")
 public class PessoaModel implements Serializable {
     
     
@@ -35,13 +35,14 @@ public class PessoaModel implements Serializable {
         this.treino = treino;
     }
 
-    public int getId() {
-        return id;
-    }
-
+  
     public void setId(int id) {
         this.id = id;
     }
+      public int getId() {
+        return id;
+    }
+
 
     public String getNome() {
         return nome;

@@ -22,6 +22,9 @@ public class TreinoModel implements Serializable {
    
     protected String descricao;
     protected String titulo;
+
+    public TreinoModel() {
+    }
     public TreinoModel(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
@@ -30,8 +33,12 @@ public class TreinoModel implements Serializable {
     public String getTitulo() {
         return titulo;
     }
+    public int getID() {
+        return id;
+    }
 
     public String getDescricao() {
         return descricao;
     }
+
 }

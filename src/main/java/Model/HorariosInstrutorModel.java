@@ -13,8 +13,8 @@ public class HorariosInstrutorModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String seg;
+private int id;
+private String seg;
 private String ter;
 private String qua;
 private String qui;

@@ -25,12 +25,12 @@ public class PessoaDAO extends BaseDAO {
         }
     }
     
-    public PessoaModel remover(int id){
-        PessoaModel pessoa = null;
+    public void remover(int id){
+     PessoaModel pessoa = null;
         try{
-
-           em.getTransaction().begin();
+            em.getTransaction().begin();
            pessoa = em.find(PessoaModel.class,id );
+           
            em.remove(pessoa);
            em.getTransaction().commit();
 
@@ -40,21 +40,28 @@ public class PessoaDAO extends BaseDAO {
         }finally {
             fecharConexao();
         }
-       return pessoa;
+//       return pessoa;
     }
     
     
     
-    public void atualizar(PessoaModel pessoa){
+    public void atualizar(PessoaModel pessoa, int id,String novoTreino){
 
         try{
-         pessoa = em.find(PessoaModel.class, 2L);
+         pessoa = em.find(PessoaModel.class, id);
          em.getTransaction().begin();
-         pessoa.setNome("Agoragu");
-         pessoa.setTipo("agrTR");
-         pessoa.setTreino("0");
-         pessoa.setDataNascimento("agrontem");
-         em.merge(pessoa);
+//         pessoa.setNome("Agoragu");
+//         pessoa.setTipo("agrTR");
+//         pessoa.setDataNascimento("agrontem");
+System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
+System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
+
+System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
+
+System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
+
+       pessoa.setTreino(novoTreino);
+               em.merge(pessoa);
          em.getTransaction().commit();
 
         }catch (Exception e){
@@ -73,7 +80,7 @@ public class PessoaDAO extends BaseDAO {
        List<PessoaModel> pessoa = null;
 
        try{
-           pessoa = em.createQuery("from Pessoas").getResultList();
+           pessoa = em.createQuery("from PessoaModel").getResultList();
 
        }catch (Exception e){
             em.getTransaction().rollback();
@@ -93,6 +100,27 @@ public class PessoaDAO extends BaseDAO {
          try{
             em.getTransaction().begin();
             pessoa = em.find(PessoaModel.class, id);
+            em.getTransaction().commit();
+
+         }catch (Exception e){
+            em.getTransaction().rollback();
+            e.printStackTrace();
+
+         }finally {
+             em.close();
+             emf.close();
+         }
+
+        return pessoa;
+    }
+    
+    
+    public PessoaModel buscarNome(String name){
+
+        PessoaModel pessoa = null;
+         try{
+            em.getTransaction().begin();
+            pessoa = em.find(PessoaModel.class, name);
             em.getTransaction().commit();
 
          }catch (Exception e){

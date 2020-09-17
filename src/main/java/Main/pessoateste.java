@@ -8,14 +8,14 @@ import Model.PessoaModel;
 
 public class pessoateste {
      public static void main(String[] args){
-        PessoaModel t = new PessoaModel("Gustavo", "21312232","312/10/2000", "nada", "132");
+        PessoaModel t = new PessoaModel("Albertpm", "a","ontem", "Aluno", "234&");
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.gravar(t);
        System.out.println(t);
-        PessoaModel f = new PessoaModel("Vargas", "1234","hoje", "nada", "32");
-        PessoaDAO pDAOf = new PessoaDAO();
-        pDAOf.gravar(f);
-       System.out.println(f);
+//        PessoaModel f = new PessoaModel("Jose", "00","hoje", "nada", "32");
+//        PessoaDAO pDAOf = new PessoaDAO();
+//        pDAOf.gravar(f);
+//       System.out.println(f);
 
 // PessoaDAO produtoRepository = new PessoaDAO();
 //

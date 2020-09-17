@@ -2,6 +2,7 @@
 package Dao;
 
 import Model.TreinoModel;
+import java.util.List;
 
 
 public class TreinoDAO extends BaseDAO {
@@ -39,6 +40,44 @@ public class TreinoDAO extends BaseDAO {
             fecharConexao();
         }
        return treino;
+    }
+    
+    public TreinoModel buscarId(int id){
+
+        TreinoModel treino = null;
+         try{
+            em.getTransaction().begin();
+            treino = em.find(TreinoModel.class, id);
+            em.getTransaction().commit();
+
+         }catch (Exception e){
+            em.getTransaction().rollback();
+            e.printStackTrace();
+
+         }finally {
+             em.close();
+             emf.close();
+         }
+
+        return treino;
+    }
+     public List<TreinoModel> buscarTodos(){
+
+       List<TreinoModel> treino = null;
+
+       try{
+           treino = em.createQuery("from TreinoModel").getResultList();
+
+       }catch (Exception e){
+            em.getTransaction().rollback();
+            e.printStackTrace();
+       }finally {
+
+            em.close();
+            emf.close();
+       }
+
+        return treino;
     }
 
 }
