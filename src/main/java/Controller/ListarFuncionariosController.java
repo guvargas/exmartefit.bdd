@@ -2,7 +2,9 @@
 package Controller;
 
 import Dao.PessoaDAO;
+import Dao.PontosDao;
 import Model.PessoaModel;
+import Model.PontoModel;
 import View.TelaListarFuncionariosView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +38,7 @@ public final class ListarFuncionariosController {
         }else{
             JOptionPane.showMessageDialog(null, "Nao há instrutores cadastrados");
         }
+        adicionarAcoesBotoes();
         listarFuncionarios.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
         
@@ -43,7 +46,8 @@ public final class ListarFuncionariosController {
     }
     
      public void adicionarAcoesBotoes(){
-        acaoVoltar();
+        acaoVisualizarPontos();
+         acaoVoltar();
       
     }
     
@@ -59,6 +63,18 @@ public final class ListarFuncionariosController {
       public void acaoVisualizarPontos(){
         listarFuncionarios.addAcaoBotaoVizualisarPontos(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                
+                listarFuncionarios.ExibirMensagem(listarFuncionarios.getId());
+                
+                PontosDao pdao = new PontosDao();
+                List<PontoModel> listaPontos = pdao.buscarTodos();
+                StringBuffer sb = new StringBuffer();
+                for(PontoModel ponto: listaPontos){
+                    if(ponto.getIdDoInstrutor()== Integer.parseInt(listarFuncionarios.getId())){
+                        sb.append(ponto.getHorario()+"\n");
+                    }
+                }
+                listarFuncionarios.setTextAreaVisualizarPontos(sb.toString());
                 
             
             }
