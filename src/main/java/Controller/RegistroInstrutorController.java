@@ -11,7 +11,7 @@ import View.TelaRegistrarInstrutorView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-
+import Controller.CampoVazioExceptionControler;
 /**
  *
  * @author asg75
@@ -30,12 +30,17 @@ public class RegistroInstrutorController {
        tri.adicionarAcaoBotao(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-          
+            try{
+                if(tri.getNome().equals("")  || tri.getCPF().equals("") || tri.getDataDeNascimento().equals("") || tri.getHorarioTrabalho().equals("")){
+                    throw new CampoVazioExceptionControler();
+                }
             PessoaModel pessoaModel = new PessoaModel(tri.getNome(), tri.getCPF(), tri.getDataDeNascimento(), "Instrutor", null,tri.getHorarioTrabalho());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
             tri.setVisible(false);
             tri.dispose();
+            }catch(CampoVazioExceptionControler c){
+            }
            }
        } );
    } 

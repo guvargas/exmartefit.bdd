@@ -64,7 +64,7 @@ public final class ListarAlunosController {
         listaralunos.adicionarAcaoAlterarHorario(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try{
-                    if(listaralunos.getIdAlterarTreino().equals("")){
+                    if(listaralunos.IdAlterarHorario().equals("")){
                         throw new CampoVazioExceptionControler();
                     }
                     PessoaDAO pdao = new PessoaDAO();

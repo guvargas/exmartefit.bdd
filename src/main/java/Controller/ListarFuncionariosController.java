@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-
+import Controller.CampoVazioExceptionControler;
 
 public final class ListarFuncionariosController {
     
@@ -63,7 +63,10 @@ public final class ListarFuncionariosController {
       public void acaoVisualizarPontos(){
         listarFuncionarios.addAcaoBotaoVizualisarPontos(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                try{
+                if(listarFuncionarios.getId().equals("")){
+                    throw new CampoVazioExceptionControler();
+                }
                 listarFuncionarios.ExibirMensagem(listarFuncionarios.getId());
                 
                 PontosDao pdao = new PontosDao();
@@ -75,7 +78,8 @@ public final class ListarFuncionariosController {
                     }
                 }
                 listarFuncionarios.setTextAreaVisualizarPontos(sb.toString());
-                
+                }catch(CampoVazioExceptionControler c){
+                }
             
             }
         }

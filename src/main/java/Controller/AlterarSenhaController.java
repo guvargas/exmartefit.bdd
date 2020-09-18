@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-
+import Controller.CampoVazioExceptionControler;
 /**
  *
  * @author asg75
@@ -34,10 +34,16 @@ public class AlterarSenhaController {
         tas.adicionarAcaoBotao(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try{
+                    if (tas.getSenha().equals("")){
+                        throw new CampoVazioExceptionControler();
+                    }
                 PessoaDAO pdao = new PessoaDAO();
        
 
                 pdao.atualizarSenha(pes, pes.getId(), tas.getSenha());
+                }catch(CampoVazioExceptionControler c){
+                }
             }
         });
     }
