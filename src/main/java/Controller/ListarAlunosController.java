@@ -35,6 +35,7 @@ public final class ListarAlunosController {
             JOptionPane.showMessageDialog(null, "Nao há alunos cadastrados");
         }
         listaralunos.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        listaralunos.setTitle("ExMarteFit");
         exibirTela();
         adicionarAcoesBotoes();
         

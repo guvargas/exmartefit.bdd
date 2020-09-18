@@ -23,6 +23,7 @@ public class AlterarSenhaController {
     public AlterarSenhaController(PessoaModel pes) {
         adicionarAcaoBotao(pes);
         tas.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        tas.setTitle("ExMarteFit");
         exibirTela();
     }
     

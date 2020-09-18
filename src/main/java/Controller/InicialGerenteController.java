@@ -18,7 +18,7 @@ public class InicialGerenteController {
     InicialGerenteController(PessoaModel encontrada) {
         gerenteView.setNomeGerente(encontrada.getNome());
         
-        
+        gerenteView.setTitle("ExMarteFit");
         exibirTela();
         adicionarAcoesBotoes(encontrada);
         

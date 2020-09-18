@@ -26,6 +26,7 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
         adicionarAcaoBotao();
         adicionarItensComboBox();
         tra.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        tra.setTitle("ExMarteFit");
         exibirTela();
     }
     

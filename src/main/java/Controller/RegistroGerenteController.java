@@ -27,6 +27,7 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
         adicionarAcaoBotaoSalvar();
                 adicionarAcaoBotaoVoltar();
                 tra.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                tra.setTitle("ExMarteFit");
         exibirTela();
     }
     

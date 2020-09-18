@@ -22,6 +22,7 @@ public final class InicialAlunoController {
         TreinoModel treino = buscarTreino(treinoRepository, encontrada.getTreino());//treinoRepository.buscarId(Integer.parseInt(encontrada.getTreino()));
         alunoView.SetTreino(encontrada.getNome(),treino.getTitulo(), treino.getDescricao());
         adicionarAcoesBotoes();
+        alunoView.setTitle("ExMarteFit");
         exibirTela();
     }
     

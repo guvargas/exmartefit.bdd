@@ -22,6 +22,7 @@ public class RegistroInstrutorController {
     public RegistroInstrutorController() {
         adicionarAcaoBotao();
         tri.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        tri.setTitle("ExMarteFit");
         exibirTela();
     }
     

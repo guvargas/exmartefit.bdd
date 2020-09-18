@@ -32,6 +32,7 @@ public class LoginController {
 }
         loginView= new TelaLoginView();
         adicionarAcoesBotoes();
+        loginView.setTitle("ExMarteFit");
     }
     
     public void exibirTela(){

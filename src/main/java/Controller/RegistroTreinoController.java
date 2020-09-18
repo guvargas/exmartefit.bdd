@@ -18,6 +18,7 @@ public class RegistroTreinoController {
         
         adicionarAcoesBotoes();
         telaAdcTreino.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaAdcTreino.setTitle("ExMarteFit");
         exibirTela();
     }
     

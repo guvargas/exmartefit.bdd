@@ -28,6 +28,7 @@ public class PontoTreinadorController {
         adicionarAcaoBotaoBaterPonto(pm);
         adicionarHistoricoDePontosBatidos(idDoInstrutor);
         telaPonto.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        telaPonto.setTitle("ExMarteFit");
         exibirTela();
     }
     

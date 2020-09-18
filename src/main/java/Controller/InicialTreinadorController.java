@@ -26,6 +26,7 @@ public class InicialTreinadorController {
         nomeTreinador = encontrada.getNome();
         idTreinador = encontrada.getId();
         adicionarAcaoBotoes();
+        treinadorView.setTitle("ExMarteFit");
         exibirTela();
     }
     

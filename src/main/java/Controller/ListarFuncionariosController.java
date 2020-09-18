@@ -40,6 +40,7 @@ public final class ListarFuncionariosController {
         }
         adicionarAcoesBotoes();
         listarFuncionarios.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        listarFuncionarios.setTitle("ExMarteFit");
         exibirTela();
         
         
