@@ -48,8 +48,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lbTituloDoTreino" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfTituloDoTreino" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbTituloDoTreino" max="32767" attributes="0"/>
+                              <Component id="cbTreino" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="btAlterarTreino" min="-2" max="-2" attributes="0"/>
@@ -117,8 +117,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="tfIdAlunoAlterarTreino" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfTituloDoTreino" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btAlterarTreino" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbTreino" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lbAlterarHorario" min="-2" max="-2" attributes="0"/>
@@ -141,8 +141,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="tfTituloDoTreino">
-        </Component>
         <Component class="javax.swing.JLabel" name="lbAlterarHorario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alterar Horario"/>
@@ -275,6 +273,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbTreino">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

@@ -21,7 +21,7 @@ public final class ListarAlunosController {
     
     public ListarAlunosController() {
         
-        
+        adicionarTreinos();
         
         for (PessoaModel p: pessoas ) {
             if("Aluno".equals(p.getTipo())){
@@ -72,6 +72,15 @@ public final class ListarAlunosController {
         }
         );
     }
+    
+    public void adicionarTreinos(){
+        TreinoDAO tdao = new TreinoDAO();
+        List<TreinoModel> listaTreino = tdao.buscarTodos();
+        for(TreinoModel tm : listaTreino){
+            listaralunos.adicionarTreinoComboBox(tm.getTitulo());
+        }
+    }
+    
     public void acaoAltTreino(){
         listaralunos.adicionarAcaoBotaoAlterarTreino(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

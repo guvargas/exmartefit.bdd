@@ -17,10 +17,14 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     public String getIdAlterarTreino(){
         return tfIdAlunoAlterarTreino.getText();
     }
-    public String getTituloDoTreino (){
-        return tfTituloDoTreino.getText();
+    
+    public String getTituloDoTreino(){
+        return cbTreino.getSelectedItem().toString();
     }
-   
+    
+    public void adicionarTreinoComboBox(String treino){
+        cbTreino.addItem(treino);
+    }
     public String IdAlterarHorario(){
         return tfIdAlterarHorario.getText();
     }
@@ -39,7 +43,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     public void limparDados(){
         tfIdAlterarHorario.setText(null);
         tfIdAlunoAlterarTreino.setText(null);
-        tfTituloDoTreino.setText(null);
+        
     }
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
@@ -62,7 +66,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        tfTituloDoTreino = new javax.swing.JTextField();
         lbAlterarHorario = new javax.swing.JLabel();
         tfIdAlterarHorario = new javax.swing.JTextField();
         lbVizualizarAlunos = new javax.swing.JLabel();
@@ -80,6 +83,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
         tfIdAlunoAlterarTreino = new javax.swing.JTextField();
         lbTituloDoTreino = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
+        cbTreino = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,7 +152,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbTituloDoTreino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfTituloDoTreino))
+                            .addComponent(cbTreino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(29, 29, 29)
                         .addComponent(btAlterarTreino))
                     .addComponent(lbAlterarHorario)
@@ -200,8 +204,8 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfIdAlunoAlterarTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfTituloDoTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btAlterarTreino))
+                    .addComponent(btAlterarTreino)
+                    .addComponent(cbTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbAlterarHorario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -268,6 +272,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     private javax.swing.JButton btAlterarHorario;
     private javax.swing.JButton btAlterarTreino;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JComboBox<String> cbTreino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -283,7 +288,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     private javax.swing.JTable tabAlunos;
     private javax.swing.JTextField tfIdAlterarHorario;
     private javax.swing.JTextField tfIdAlunoAlterarTreino;
-    private javax.swing.JTextField tfTituloDoTreino;
     // End of variables declaration//GEN-END:variables
 
   
