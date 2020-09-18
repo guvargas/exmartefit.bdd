@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 
 public final class ListarFuncionariosController {
@@ -35,6 +36,7 @@ public final class ListarFuncionariosController {
         }else{
             JOptionPane.showMessageDialog(null, "Nao há instrutores cadastrados");
         }
+        listarFuncionarios.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
         
         

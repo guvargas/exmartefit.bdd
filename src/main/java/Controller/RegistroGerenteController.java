@@ -14,6 +14,7 @@ import View.TelaRegistrarGerenteView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -25,6 +26,7 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
     public RegistroGerenteController() {
         adicionarAcaoBotaoSalvar();
                 adicionarAcaoBotaoVoltar();
+                tra.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
     }
     

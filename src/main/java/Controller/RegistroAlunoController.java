@@ -13,6 +13,7 @@ import View.TelaRegistrarAlunoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -24,6 +25,7 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
     public RegistroAlunoController() {
         adicionarAcaoBotao();
         adicionarItensComboBox();
+        tra.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
     }
     

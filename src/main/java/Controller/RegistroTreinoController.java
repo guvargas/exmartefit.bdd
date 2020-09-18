@@ -7,6 +7,7 @@ import View.TelaAdicionarTreinoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Controller.CampoVazioExceptionControler;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 
 public class RegistroTreinoController {
@@ -16,6 +17,7 @@ public class RegistroTreinoController {
         telaAdcTreino= new TelaAdicionarTreinoView();
         
         adicionarAcoesBotoes();
+        telaAdcTreino.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
     }
     

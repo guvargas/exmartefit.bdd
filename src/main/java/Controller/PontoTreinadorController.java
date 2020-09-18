@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;    
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -26,6 +27,7 @@ public class PontoTreinadorController {
         PontoModel pm = new PontoModel(nomeDoInstrutor,getCurrentDate(),idDoInstrutor);
         adicionarAcaoBotaoBaterPonto(pm);
         adicionarHistoricoDePontosBatidos(idDoInstrutor);
+        telaPonto.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
     }
     

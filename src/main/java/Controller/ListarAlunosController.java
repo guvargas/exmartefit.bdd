@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public final class ListarAlunosController {
     private TelaListarAlunosView listaralunos= new TelaListarAlunosView();
@@ -33,6 +34,7 @@ public final class ListarAlunosController {
         }else{
             JOptionPane.showMessageDialog(null, "Nao há alunos cadastrados");
         }
+        listaralunos.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         exibirTela();
         adicionarAcoesBotoes();
         
