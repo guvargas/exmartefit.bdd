@@ -90,8 +90,8 @@ public class InicialGerenteController {
                     break;
                     
                     case "Gerente":
-                        // colocar aqui o teu
-                    break;
+                    RegistroGerenteController rec = new RegistroGerenteController();                        
+                        break;
                 }
                 
             }
