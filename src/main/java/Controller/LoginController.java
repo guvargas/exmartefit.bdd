@@ -46,38 +46,42 @@ public class LoginController {
         );
     }
     public void logar(String Login, String Senha){
-        for (PessoaModel p: pessoas ) {
-            System.out.println(p.toString());
-            if(p.getCpf().equals(Senha) && p.getNome().equals(Login)){
-                System.out.println("achoouu");
-                
-                encontrada= p;
+        try{
+            if(loginView.getLogin().equals("") || loginView.getSenha().equals("")){
+                throw new CampoVazioExceptionControler();
             }
-        }
-        if(encontrada!=null){
-            loginView.ExibirMensagem("Olá "+Login + ", seja bem vindo!");
-            loginView.limparTxtFields();
-            
-            switch(encontrada.getTipo()) {
-                case "Instrutor":
-                    InicialTreinadorController t = new InicialTreinadorController(encontrada);
-                    break;
-                case "Gerente":
-                      InicialGerenteController d= new InicialGerenteController(encontrada);
-                    
-                    break;
-                case "Aluno":
-                    InicialAlunoController n= new InicialAlunoController(encontrada);
-                    
-                    break;
-                    
+            for (PessoaModel p: pessoas ) {
+                System.out.println(p.toString());
+                if(p.getCpf().equals(Senha) && p.getNome().equals(Login)){
+                    System.out.println("achoouu");
+                    encontrada= p;
+                }
             }
-            loginView.dispose();
-        }else{
+            if(encontrada!=null){
+                loginView.ExibirMensagem("Olá "+Login + ", seja bem vindo!");
+                loginView.limparTxtFields();
+
+                switch(encontrada.getTipo()) {
+                    case "Instrutor":
+                        InicialTreinadorController t = new InicialTreinadorController(encontrada);
+                        break;
+                    case "Gerente":
+                       InicialGerenteController d= new InicialGerenteController(encontrada);
+                    
+                        break;
+                    case "Aluno":
+                      InicialAlunoController n= new InicialAlunoController(encontrada);
+                    
+                        break;
+                    
+                }
+                loginView.dispose();
+            }else{
+                loginView.ExibirMensagem("Confira o login e senha");
+            }
+        }catch(CampoVazioExceptionControler c){
             
-            loginView.ExibirMensagem("Confira o login e senha");
         }
-        
         
         
         

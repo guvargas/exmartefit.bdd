@@ -126,26 +126,10 @@ public class TelaLoginView extends javax.swing.JFrame {
     }
      
     public String getLogin(){
-        try{
-            if(tfLogin.getText().equals("")){
-                throw new CampoVazioExceptionControler();
-            }
         return tfLogin.getText();
-        }
-        catch(CampoVazioExceptionControler c){
-            return null;
-        }
     }
     public String getSenha(){
-        try{
-            if(tfSenha.getText().equals("")){
-                throw new CampoVazioExceptionControler();
-            }
         return tfSenha.getText();
-        }
-        catch(CampoVazioExceptionControler c){
-            return null;
-        }
     }
     public void addAcaoBotaoEntrar(ActionListener acao){
         btEntrar.addActionListener(acao);
