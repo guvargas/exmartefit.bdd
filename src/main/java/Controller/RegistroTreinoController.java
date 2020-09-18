@@ -7,6 +7,9 @@ import View.TelaAdicionarTreinoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Controller.CampoVazioExceptionControler;
+import Dao.PessoaDAO;
+import Model.PessoaModel;
+import java.util.List;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 
@@ -16,15 +19,27 @@ public class RegistroTreinoController {
     public RegistroTreinoController() {
         telaAdcTreino= new TelaAdicionarTreinoView();
         
-        adicionarAcoesBotoes();
+       
         telaAdcTreino.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaAdcTreino.setTitle("ExMarteFit");
-        exibirTela();
+         adicionarAcoesBotoes();
+      adicionarTreinos();
+         exibirTela();
+      
+    }
+    
+     public void adicionarTreinos(){
+        TreinoDAO tdao = new TreinoDAO();
+        List<TreinoModel> listaTreino = tdao.buscarTodos();
+        for(TreinoModel tm : listaTreino){
+            telaAdcTreino.adicionarTreinoComboBox(tm.getTitulo());
+        }
     }
     
     public void adicionarAcoesBotoes(){
         acaoSalvar();
         acaoVoltar();
+        acaoExcluir();
     }
     
     
@@ -45,6 +60,7 @@ public class RegistroTreinoController {
                     TreinoModel t = new TreinoModel(telaAdcTreino.getTituloTreino(),telaAdcTreino.getDescricaoTreino());
                     TreinoDAO treinoDAO = new TreinoDAO();
                     treinoDAO.gravar(t);
+                    
                 }catch(CampoVazioExceptionControler c){
                 }
                 
@@ -53,12 +69,37 @@ public class RegistroTreinoController {
         }
         );
     }
-    public void acaoVoltar(){
-        telaAdcTreino.addAcaoBotaoSalvar(new ActionListener() {
+    
+     public void acaoExcluir(){
+        telaAdcTreino.addAcaoBotaoExcluir(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+             
+                    
+                    TreinoDAO treinoDAO = new TreinoDAO();
+                    
+                    TreinoModel treino= (TreinoModel) telaAdcTreino.getTituloDoTreino();
+                    
+                    treinoDAO.remover(treino.getID());
+
+                    
+                    voltar();
+                    
+              
                 
-                telaAdcTreino.setVisible(false);
-                                telaAdcTreino.dispose();
+            }
+            
+        }
+        );
+    }
+       public void voltar(){
+        telaAdcTreino.setVisible(false);
+        telaAdcTreino.dispose();
+    }
+    
+    public void acaoVoltar(){
+        telaAdcTreino.addAcaoBotaoVoltar(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+           voltar();
                 
             }
             

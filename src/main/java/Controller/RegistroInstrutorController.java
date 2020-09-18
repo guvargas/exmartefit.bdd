@@ -20,13 +20,17 @@ public class RegistroInstrutorController {
     TelaRegistrarInstrutorView tri = new TelaRegistrarInstrutorView();
 
     public RegistroInstrutorController() {
-        adicionarAcaoBotao();
+       
         tri.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         tri.setTitle("ExMarteFit");
         exibirTela();
     }
     
-    
+    public void acoesBotoes(){
+     adicionarAcaoBotao();
+     
+    adicionarAcaoBotaoVoltar();
+    }
    public void adicionarAcaoBotao(){
        tri.adicionarAcaoBotao(new ActionListener() {
            @Override
@@ -38,14 +42,26 @@ public class RegistroInstrutorController {
             PessoaModel pessoaModel = new PessoaModel(tri.getNome(), tri.getCPF(), tri.getDataDeNascimento(), "Instrutor", null,tri.getHorarioTrabalho());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
-            tri.setVisible(false);
-            tri.dispose();
+           voltar();
             }catch(CampoVazioExceptionControler c){
             }
            }
        } );
    } 
-    
+     public void adicionarAcaoBotaoVoltar(){
+    tri.addAcaoBotaoVoltar(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+         voltar();
+            
+        }
+    });
+    }
+     
+    public void voltar(){
+   tri.setVisible(false);
+   tri.dispose();
+    }
    
    
    public void exibirTela(){

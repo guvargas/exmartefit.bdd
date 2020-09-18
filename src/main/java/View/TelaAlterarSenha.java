@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 
 /**
@@ -17,6 +19,9 @@ public class TelaAlterarSenha extends javax.swing.JFrame {
      * Creates new form TelaAlterarSenha
      */
     public TelaAlterarSenha() {
+         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
     

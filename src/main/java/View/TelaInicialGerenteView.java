@@ -1,12 +1,17 @@
 
 package View;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 
 public class TelaInicialGerenteView extends javax.swing.JFrame {
     
     
     public TelaInicialGerenteView() {
+         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
     public void setNomeGerente(String nome){

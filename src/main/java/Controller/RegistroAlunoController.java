@@ -29,7 +29,11 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
         tra.setTitle("ExMarteFit");
         exibirTela();
     }
-    
+    public void acoesBotoes(){
+     adicionarAcaoBotao();
+     
+    adicionarAcaoBotaoVoltar();
+    }
     public void adicionarAcaoBotao(){
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
@@ -59,6 +63,18 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
         for(TreinoModel tModel : listaTreinos){
             tra.adiconarOpcaoTreino(tModel.getTitulo());
         }
+    }
+     public void adicionarAcaoBotaoVoltar(){
+    tra.addAcaoBotaoVoltar(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+         voltar();
+            
+        }
+    });
+    } public void voltar(){
+   tra.setVisible(false);
+   tra.dispose();
     }
     
     public void exibirTela(){

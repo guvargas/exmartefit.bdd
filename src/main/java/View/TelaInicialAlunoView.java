@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -16,6 +18,9 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
 
  
     public TelaInicialAlunoView() {
+         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
        

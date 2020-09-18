@@ -25,6 +25,7 @@ public class LoginController {
     PessoaModel encontrada = null;
     
     public LoginController() {
+        
          try {
     UIManager.setLookAndFeel( new FlatDarkLaf() );
 } catch( UnsupportedLookAndFeelException ex ) {

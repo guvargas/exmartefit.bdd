@@ -35,7 +35,7 @@ public class InicialTreinadorController {
         acaoBaterPonto();
         acaoRegistrarTreinos();
         acaoRegistrarAlunos();
-        
+        acaoVoltar();
     }
            
     public void acaoRegistrarAlunos(){
