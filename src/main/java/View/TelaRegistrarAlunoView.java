@@ -85,8 +85,6 @@ public class TelaRegistrarAlunoView extends javax.swing.JFrame {
 
         jLabel1.setText("Selecione um treino:");
 
-        cbTreino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar" }));
-
         btRegistrar.setText("Registrar");
 
         lbHorario.setText("Digite seu horario de treino:");

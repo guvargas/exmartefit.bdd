@@ -41,7 +41,7 @@ public class InicialTreinadorController {
         treinadorView.adicionarAcaoBotaoRegistrarAluno(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //RegistroAlunoController rgaluno = new RegistroAlunoController();
+                RegistroAlunoController rgaluno = new RegistroAlunoController();
             }
         });
     }    
