@@ -6,6 +6,7 @@
     <class>Model.TreinoModel</class>
     <class>Model.PessoaModel</class>
         <class>Model.HorariosInstrutorModel</class>
+        <class>Model.PontoModel</class>
 
     
     <properties>

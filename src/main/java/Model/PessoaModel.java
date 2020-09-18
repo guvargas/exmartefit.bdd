@@ -21,18 +21,22 @@ public class PessoaModel implements Serializable {
     String dataNascimento;
     String tipo;
     String treino;
+    String horario;
     
     private static final long serialVersionUID = -299569408537971270L;
 
     public PessoaModel() {
     }
 
-    public PessoaModel(String nome, String cpf, String dataNascimento, String tipo, String treino) {
+    
+
+    public PessoaModel(String nome, String cpf, String dataNascimento, String tipo, String treino, String horario) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.tipo = tipo;
         this.treino = treino;
+        this.horario = horario;
     }
 
   

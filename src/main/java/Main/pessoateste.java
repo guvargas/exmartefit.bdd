@@ -8,7 +8,7 @@ import Model.PessoaModel;
 
 public class pessoateste {
      public static void main(String[] args){
-        PessoaModel t = new PessoaModel("b", "b","ontem", "Instrutor", "Supino");
+        PessoaModel t = new PessoaModel("b", "b","ontem", "Instrutor", "Supino", "8 da manhã");
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.gravar(t);
        System.out.println(t);
@@ -17,7 +17,7 @@ public class pessoateste {
 //        pDAOf.gravar(f);
 //       System.out.println(f);
 
-// PessoaDAO produtoRepository = new PessoaDAO();
+//        PessoaDAO produtoRepository = new PessoaDAO();
 //
 //        PessoaModel produto = produtoRepository.buscarId(9);
 //
