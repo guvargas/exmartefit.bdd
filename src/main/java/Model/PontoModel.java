@@ -24,13 +24,24 @@ public class PontoModel implements Serializable{
     private int id; 
     private String nomeDoInstrutor;
     private String Horario;
+    private int idDoInstrutor;
+    
 
+    public int getIdDoInstrutor() {
+        return idDoInstrutor;
+    }
+    
+    public int getId(){
+        return id;
+    }
+    
     public PontoModel() {
     }
 
-    public PontoModel(String nomeDoInstrutor, String Horario) {
+    public PontoModel(String nomeDoInstrutor, String Horario, int idDoInstrutor) {
         this.nomeDoInstrutor = nomeDoInstrutor;
         this.Horario = Horario;
+        this.idDoInstrutor = idDoInstrutor;
     }
 
     public String getNomeDoInstrutor() {

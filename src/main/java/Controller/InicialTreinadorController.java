@@ -18,10 +18,13 @@ import java.awt.event.ActionListener;
 public class InicialTreinadorController {
     private final TelaInicialInstrutorView treinadorView= new TelaInicialInstrutorView();
     private String nomeTreinador;
+    private Integer idTreinador;
     
     public InicialTreinadorController(PessoaModel encontrada) {
+        
         treinadorView.setNome(encontrada.getNome());
         nomeTreinador = encontrada.getNome();
+        idTreinador = encontrada.getId();
         adicionarAcaoBotoes();
         exibirTela();
     }
@@ -44,7 +47,7 @@ public class InicialTreinadorController {
         treinadorView.adicionarAcaoBotaoPonto(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PontoTreinadorController ptc = new PontoTreinadorController(nomeTreinador);
+                PontoTreinadorController ptc = new PontoTreinadorController(nomeTreinador, idTreinador);
                 
             }
         });

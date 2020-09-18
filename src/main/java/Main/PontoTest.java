@@ -14,7 +14,7 @@ import Model.PontoModel;
  */
 public class PontoTest {
     public static void main(String[] args) {
-        PontoModel ponto = new  PontoModel("Roberto", "5 da tarde");
+        PontoModel ponto = new  PontoModel("Roberto", "5 da tarde", 15);
         PontosDao pontoDao = new PontosDao();
         pontoDao.gravar(ponto);
         System.out.print(ponto);

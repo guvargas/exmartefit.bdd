@@ -21,11 +21,11 @@ import java.time.LocalDateTime;
 public class PontoTreinadorController {
     private final TelaPontoTreinadorView telaPonto = new TelaPontoTreinadorView();
     
-    public PontoTreinadorController(String nomeDoInstrutor){
+    public PontoTreinadorController(String nomeDoInstrutor, int idDoInstrutor){
         telaPonto.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        PontoModel pm = new PontoModel(nomeDoInstrutor,getCurrentDate());
+        PontoModel pm = new PontoModel(nomeDoInstrutor,getCurrentDate(),idDoInstrutor);
         adicionarAcaoBotaoBaterPonto(pm);
-        adicionarHistoricoDePontosBatidos(nomeDoInstrutor);
+        adicionarHistoricoDePontosBatidos(idDoInstrutor);
         exibirTela();
     }
     
@@ -36,6 +36,7 @@ public class PontoTreinadorController {
                 PontosDao pDaoRepository = new PontosDao();
                 pDaoRepository.gravar(pontoBatido);
                 telaPonto.setVisible(false);
+                telaPonto.dispose();
             }
         });
         
@@ -48,12 +49,14 @@ public class PontoTreinadorController {
           return dtf.format(now);  
     }
     
-    public void adicionarHistoricoDePontosBatidos(String nomeInstrutor){
+    public void adicionarHistoricoDePontosBatidos(int idInstrutor){
         StringBuffer sb = new StringBuffer();
         PontosDao pDaoRepository = new PontosDao();
         List<PontoModel> listaPontos = pDaoRepository.buscarTodos();
+        
         for(PontoModel pm : listaPontos){
-            if(pm.getNomeDoInstrutor().equals(nomeInstrutor)){
+            if(pm.getIdDoInstrutor()==idInstrutor){
+                 
                 sb.append(pm.getHorario()+"\n");
             }
         }
