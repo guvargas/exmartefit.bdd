@@ -19,14 +19,17 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
         initComponents();
     }
        
-    public void SetTreino(String nome, String tituloDoTreino, String descricaoDoTreino){
-        LbNome.setText("Bem vindo "+nome);
-        LbTituloDoTreino.setText("O seu treino atual é o " +tituloDoTreino);
-        taDescricaoDoTreino.setText(descricaoDoTreino);
-    }
-    public void addAcaoBotaoVoltar(ActionListener acao){
-        btVoltar.addActionListener(acao);
-    }
+   public void setNome(String nome){
+       lbNome.setText(nome);
+   }
+   
+   public void adicionarAcaoBotaoPonto(ActionListener acao){
+       btBaterPonto.addActionListener(acao);
+   }
+   
+   public void adicionarAcaoBotaoAlunos(ActionListener acao){
+       btVisualizarAlunos.addActionListener(acao);
+   }
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
@@ -39,85 +42,49 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        LbNome = new javax.swing.JLabel();
-        LbTituloDoTreino = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        taDescricaoDoTreino = new javax.swing.JTextArea();
-        LbDescricao = new javax.swing.JLabel();
-        btVoltar = new javax.swing.JButton();
+        lbNome = new javax.swing.JLabel();
+        btBaterPonto = new javax.swing.JButton();
+        btVisualizarAlunos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LbNome.setText("Nome");
+        lbNome.setText("Nome");
 
-        LbTituloDoTreino.setText("Titulo");
+        btBaterPonto.setText("BaterPonto");
 
-        taDescricaoDoTreino.setColumns(20);
-        taDescricaoDoTreino.setRows(5);
-        jScrollPane1.setViewportView(taDescricaoDoTreino);
-
-        LbDescricao.setText("Descrição");
-
-        btVoltar.setText("Voltar");
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LbNome)
-                            .addComponent(LbTituloDoTreino)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(LbDescricao)))
-                .addContainerGap(183, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btVoltar))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LbNome)
-                .addGap(18, 18, 18)
-                .addComponent(LbTituloDoTreino)
-                .addGap(18, 18, 18)
-                .addComponent(LbDescricao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                .addGap(8, 8, 8)
-                .addComponent(btVoltar))
-        );
+        btVisualizarAlunos.setText("VisualizarAlunos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(btVisualizarAlunos))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(btBaterPonto)))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lbNome)
+                .addGap(41, 41, 41)
+                .addComponent(btBaterPonto)
+                .addGap(38, 38, 38)
+                .addComponent(btVisualizarAlunos)
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,12 +123,8 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LbDescricao;
-    private javax.swing.JLabel LbNome;
-    private javax.swing.JLabel LbTituloDoTreino;
-    private javax.swing.JButton btVoltar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea taDescricaoDoTreino;
+    private javax.swing.JButton btBaterPonto;
+    private javax.swing.JButton btVisualizarAlunos;
+    private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables
 }

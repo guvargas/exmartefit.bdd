@@ -3,6 +3,10 @@ package Controller;
 
 import Dao.PessoaDAO;
 import Model.PessoaModel;
+import View.TelaInicialAlunoView;
+import View.TelaInicialGerenteView;
+import View.TelaInicialInstrutorView;
+import View.TelaListarFuncionariosView;
 import View.TelaLoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +34,7 @@ public class LoginController {
         acaoEntrar();
     }
     
+    
     public void acaoEntrar(){
         loginView.addAcaoBotaoEntrar(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -52,12 +57,10 @@ public class LoginController {
         if(encontrada!=null){
             loginView.ExibirMensagem("Olá "+Login + ", seja bem vindo!");
             loginView.limparTxtFields();
-            System.out.println(encontrada.toString());
             
             switch(encontrada.getTipo()) {
                 case "Instrutor":
-                    
-                    
+                    InicialTreinadorController t = new InicialTreinadorController(encontrada);
                     break;
                 case "Gerente":
                       InicialGerenteController d= new InicialGerenteController(encontrada);

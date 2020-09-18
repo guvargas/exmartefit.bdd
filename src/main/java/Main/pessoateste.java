@@ -8,7 +8,7 @@ import Model.PessoaModel;
 
 public class pessoateste {
      public static void main(String[] args){
-        PessoaModel t = new PessoaModel("Albertpm", "a","ontem", "Aluno", "234&");
+        PessoaModel t = new PessoaModel("b", "b","ontem", "Instrutor", "Supino");
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.gravar(t);
        System.out.println(t);
