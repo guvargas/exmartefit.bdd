@@ -11,7 +11,6 @@ import View.TelaLoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import Controller.CampoVazioExceptionControler;
 
 
 public class LoginController {
@@ -37,12 +36,7 @@ public class LoginController {
     
     
     public void acaoEntrar(){
-        try{
-            if(loginView.getLogin().equals("") || loginView.getSenha().equals("")){
-                throw new CampoVazioExceptionControler();
-            }
         loginView.addAcaoBotaoEntrar(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 
                 logar(loginView.getLogin(),loginView.getSenha());
@@ -50,8 +44,6 @@ public class LoginController {
             
         }
         );
-        }catch (CampoVazioExceptionControler c){
-        }
     }
     public void logar(String Login, String Senha){
         for (PessoaModel p: pessoas ) {
