@@ -20,7 +20,7 @@ public class InicialGerenteController {
         
         
         exibirTela();
-        adicionarAcoesBotoes();
+        adicionarAcoesBotoes(encontrada);
         
     }
     
@@ -31,10 +31,10 @@ public class InicialGerenteController {
     
     
     
-    public void adicionarAcoesBotoes(){
+    public void adicionarAcoesBotoes(PessoaModel pes){
         acaoVoltar();
         acaoRegistrar();
-        acaoAlterarSenha();
+        acaoAlterarSenha(pes);
         acaoListarAlunos();
         acaoListarInstrutores();
     }
@@ -51,10 +51,10 @@ public class InicialGerenteController {
         }
         );
     }
-    public void acaoAlterarSenha(){
+    public void acaoAlterarSenha(PessoaModel pes){
         gerenteView.addAcaoBotaoAlterarSenha(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                AlterarSenhaController asc = new AlterarSenhaController(pes);
                 
             }
         }

@@ -25,6 +25,10 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
         btRegistrar.addActionListener(acao);
     }
     
+    public String getTipoPessoa(){
+        return cbTipoPessoa.getSelectedItem().toString();
+    }
+    
     public void addAcaoBotaoVoltar(ActionListener acao){
         btVoltar.addActionListener(acao);
     }
@@ -40,6 +44,7 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
         btRegistrar = new javax.swing.JButton();
         btAlterarSenha = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
+        cbTipoPessoa = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +60,8 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
 
         btVoltar.setText("Voltar");
 
+        cbTipoPessoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno", "Instrutor", "Gerente" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -66,7 +73,9 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
                     .addComponent(btListarFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btAlterarSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(163, 163, 163))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbTipoPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addComponent(lbNomeGerente)
@@ -85,7 +94,9 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btListarAlunos)
                 .addGap(18, 18, 18)
-                .addComponent(btRegistrar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btRegistrar)
+                    .addComponent(cbTipoPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btAlterarSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
@@ -141,6 +152,7 @@ public class TelaInicialGerenteView extends javax.swing.JFrame {
     private javax.swing.JButton btListarFuncionarios;
     private javax.swing.JButton btRegistrar;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JComboBox<String> cbTipoPessoa;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbNomeGerente;
     // End of variables declaration//GEN-END:variables

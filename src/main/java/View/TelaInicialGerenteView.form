@@ -46,7 +46,9 @@
                       <Component id="btRegistrar" alignment="1" max="32767" attributes="0"/>
                       <Component id="btAlterarSenha" alignment="1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="cbTipoPessoa" min="-2" pref="103" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
@@ -69,7 +71,10 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btListarAlunos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btRegistrar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbTipoPessoa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btAlterarSenha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="48" max="32767" attributes="0"/>
@@ -108,6 +113,20 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbTipoPessoa">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Aluno"/>
+                <StringItem index="1" value="Instrutor"/>
+                <StringItem index="2" value="Gerente"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

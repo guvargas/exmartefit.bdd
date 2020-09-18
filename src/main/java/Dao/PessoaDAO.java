@@ -50,15 +50,6 @@ public class PessoaDAO extends BaseDAO {
         try{
          pessoa = em.find(PessoaModel.class, id);
          em.getTransaction().begin();
-//         pessoa.setNome("Agoragu");
-//         pessoa.setTipo("agrTR");
-//         pessoa.setDataNascimento("agrontem");
-System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
-System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
-
-System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
-
-System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
 
        pessoa.setTreino(novoTreino);
                em.merge(pessoa);
@@ -73,6 +64,26 @@ System.out.print("CHEGO AQUI TENTANDO ATUALIZAR");
             emf.close();
         }
 
+    }
+    
+    public void atualizarSenha(PessoaModel pessoa, int id, String novoCPF){
+        try{
+            pessoa = em.find(PessoaModel.class, id);
+            em.getTransaction().begin();
+            
+            pessoa.setCpf(novoCPF);
+            em.merge(pessoa);
+            em.getTransaction().commit();
+            
+        }catch (Exception e){
+            
+            em.getTransaction().rollback();
+            e.printStackTrace();
+            
+        }finally{
+            em.close();
+            emf.close();
+        }
     }
 
     public List<PessoaModel> buscarTodos(){
