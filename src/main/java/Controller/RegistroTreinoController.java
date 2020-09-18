@@ -77,11 +77,16 @@ public class RegistroTreinoController {
                     
                     TreinoDAO treinoDAO = new TreinoDAO();
                     
-                    TreinoModel treino= (TreinoModel) telaAdcTreino.getTituloDoTreino();
+                    List<TreinoModel> listaModelo = treinoDAO.buscarTodos();
+                    TreinoModel tm = null;
                     
-                    treinoDAO.remover(treino.getID());
-
+                    for(TreinoModel treino : listaModelo){
+                        if(treino.getTitulo().equals(telaAdcTreino.getTituloDoTreino())){
+                            tm = treino;
+                        }
+                    }
                     
+                    treinoDAO.remover(tm.getID());
                     voltar();
                     
               
