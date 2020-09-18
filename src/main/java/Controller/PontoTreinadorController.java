@@ -22,6 +22,7 @@ public class PontoTreinadorController {
     private final TelaPontoTreinadorView telaPonto = new TelaPontoTreinadorView();
     
     public PontoTreinadorController(String nomeDoInstrutor){
+        telaPonto.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         PontoModel pm = new PontoModel(nomeDoInstrutor,getCurrentDate());
         adicionarAcaoBotaoBaterPonto(pm);
         adicionarHistoricoDePontosBatidos(nomeDoInstrutor);
@@ -34,8 +35,11 @@ public class PontoTreinadorController {
             public void actionPerformed(ActionEvent e) {
                 PontosDao pDaoRepository = new PontosDao();
                 pDaoRepository.gravar(pontoBatido);
+                telaPonto.setVisible(false);
             }
         });
+        
+      
     }
     
     public String getCurrentDate(){

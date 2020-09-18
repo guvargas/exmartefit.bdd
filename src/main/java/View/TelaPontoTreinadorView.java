@@ -6,6 +6,7 @@
 package View;
 
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +26,10 @@ public class TelaPontoTreinadorView extends javax.swing.JFrame {
     
     public void addAcaoBotaoBaterPonto(ActionListener acao){
         btBaterPontos.addActionListener(acao);
+    }
+    
+    public void ExibirMensagem(String mensagem){
+        JOptionPane.showMessageDialog(null, mensagem);
     }
     /**
      * This method is called from within the constructor to initialize the form.

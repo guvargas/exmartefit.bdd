@@ -45,6 +45,7 @@ public class InicialTreinadorController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PontoTreinadorController ptc = new PontoTreinadorController(nomeTreinador);
+                
             }
         });
     }
