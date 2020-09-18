@@ -6,7 +6,7 @@ import Model.TreinoModel;
 import View.TelaAdicionarTreinoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import Controller.CampoVazioExceptionControler;
 
 
 public class RegistroTreinoController {
@@ -35,10 +35,15 @@ public class RegistroTreinoController {
     public void acaoSalvar(){
         telaAdcTreino.addAcaoBotaoSalvar(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
-                 TreinoModel t = new TreinoModel(telaAdcTreino.getTituloTreino(),telaAdcTreino.getDescricaoTreino());
-                TreinoDAO treinoDAO = new TreinoDAO();
-                treinoDAO.gravar(t);
+                try{
+                    if(telaAdcTreino.getTituloTreino().equals("") || telaAdcTreino.getDescricaoTreino().equals("")){
+                        throw new CampoVazioExceptionControler();
+                    }
+                    TreinoModel t = new TreinoModel(telaAdcTreino.getTituloTreino(),telaAdcTreino.getDescricaoTreino());
+                    TreinoDAO treinoDAO = new TreinoDAO();
+                    treinoDAO.gravar(t);
+                }catch(CampoVazioExceptionControler c){
+                }
                 
             }
             

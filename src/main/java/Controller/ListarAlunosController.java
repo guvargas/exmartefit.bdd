@@ -57,6 +57,14 @@ public final class ListarAlunosController {
     public void acaoAltHorario(){
         listaralunos.adicionarAcaoAlterarHorario(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                try{
+                    if(listaralunos.getIdAlterarTreino().equals("")){
+                        throw new CampoVazioExceptionControler();
+                    }
+                    
+                }catch(CampoVazioExceptionControler c){
+                    
+                }
                 
             }
         }
@@ -65,7 +73,10 @@ public final class ListarAlunosController {
     public void acaoAltTreino(){
         listaralunos.adicionarAcaoBotaoAlterarTreino(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                try{
+                    if(listaralunos.getIdAlterarTreino().equals("") || listaralunos.getTituloDoTreino().equals("")){
+                        throw new CampoVazioExceptionControler();
+                    }
                 
                 System.out.println("lendo pessoas");
                 System.out.println(encontradas);
@@ -91,6 +102,9 @@ public final class ListarAlunosController {
                             }
                         }
                     }
+                }
+            }catch(CampoVazioExceptionControler c){
+                    
                 }
             }
         }
