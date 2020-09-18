@@ -79,7 +79,20 @@ public class InicialGerenteController {
     public void acaoRegistrar(){
         gerenteView.addAcaoBotaoRegistrar(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                switch (gerenteView.getTipoPessoa()){
+                    
+                    case "Aluno":
+                        RegistroAlunoController rac = new RegistroAlunoController();
+                    break;
+                    
+                    case "Instrutor":
+                        RegistroInstrutorController ric = new RegistroInstrutorController();
+                    break;
+                    
+                    case "Gerente":
+                        // colocar aqui o teu
+                    break;
+                }
                 
             }
         }
