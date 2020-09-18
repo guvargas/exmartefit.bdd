@@ -14,10 +14,7 @@ public class pessoateste {
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.gravar(t);
        System.out.println(t);
-        PessoaModel f = new PessoaModel("b", "b","10/10/2000","Nenhum", "Instrutor", "6 p.m");
-        PessoaDAO pDAOf = new PessoaDAO();
-        pDAOf.gravar(f);
-       System.out.println(f);
+      
 
 //        PessoaDAO produtoRepository = new PessoaDAO();
 //

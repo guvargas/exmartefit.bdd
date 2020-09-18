@@ -37,6 +37,8 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
             PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Aluno", tra.getTreinoSelecionado(), tra.getHorarioTreini());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
+            tra.setVisible(false);
+            tra.dispose();
             }
         }
     });

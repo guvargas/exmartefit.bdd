@@ -25,6 +25,7 @@ public class RegistroInstrutorController {
         exibirTela();
     }
     
+    
    public void adicionarAcaoBotao(){
        tri.adicionarAcaoBotao(new ActionListener() {
            @Override
@@ -33,7 +34,8 @@ public class RegistroInstrutorController {
             PessoaModel pessoaModel = new PessoaModel(tri.getNome(), tri.getCPF(), tri.getDataDeNascimento(), "Instrutor", null,tri.getHorarioTrabalho());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
-            
+            tri.setVisible(false);
+            tri.dispose();
            }
        } );
    } 

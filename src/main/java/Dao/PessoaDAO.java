@@ -85,6 +85,7 @@ public class PessoaDAO extends BaseDAO {
             emf.close();
         }
     }
+    
 
     public List<PessoaModel> buscarTodos(){
 
@@ -145,5 +146,27 @@ public class PessoaDAO extends BaseDAO {
 
         return pessoa;
     }
+
+    public void atualizarHorario(PessoaModel p, String novoTudo, String IdAlterarHorario) {
+        int id= Integer.parseInt(IdAlterarHorario);
+        try{
+            p = em.find(PessoaModel.class, id);
+            em.getTransaction().begin();
+            
+            p.setHorario(novoTudo);
+            em.merge(p);
+            em.getTransaction().commit();
+            
+        }catch (Exception e){
+            
+            em.getTransaction().rollback();
+            e.printStackTrace();
+            
+        }finally{
+            em.close();
+            emf.close();
+        }
+    }       
+    
 
 }

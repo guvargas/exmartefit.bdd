@@ -65,6 +65,7 @@ public final class ListarFuncionariosController {
         }
         );
     }
+      
     public void exibirTela(){
         listarFuncionarios.setVisible(true);
     }

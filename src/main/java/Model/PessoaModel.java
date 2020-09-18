@@ -22,6 +22,14 @@ public class PessoaModel implements Serializable {
     String tipo;
     String treino;
     String horario;
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
     
     private static final long serialVersionUID = -299569408537971270L;
 

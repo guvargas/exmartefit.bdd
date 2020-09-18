@@ -49,12 +49,16 @@ public final class ListarAlunosController {
     public void acaoVoltar(){
         listaralunos.addAcaoBotaoVoltar(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                listaralunos.dispose();
-                
+                voltar();
             }
         }
         );
     }
+    public void voltar(){
+        listaralunos.setVisible(false);
+        listaralunos.dispose();
+    }
+    
     
     public void acaoAltHorario(){
         listaralunos.adicionarAcaoAlterarHorario(new ActionListener() {
@@ -63,6 +67,21 @@ public final class ListarAlunosController {
                     if(listaralunos.getIdAlterarTreino().equals("")){
                         throw new CampoVazioExceptionControler();
                     }
+                    PessoaDAO pdao = new PessoaDAO();
+                    for (PessoaModel p: encontradas ) {
+                        String a= String.valueOf(p.getId());
+                        if(listaralunos.IdAlterarHorario().equals(a)){
+                            
+                            String novoTudo= String.valueOf(listaralunos.getHora())
+                                    +":"+String.valueOf(listaralunos.getMinutos());
+                            pdao.atualizarHorario(p,novoTudo, listaralunos.IdAlterarHorario());
+                            listaralunos.ExibirMensagem("Horário alterado com sucesso");
+                            
+                            voltar();
+                        }
+                    }
+                    
+                    
                     
                 }catch(CampoVazioExceptionControler c){
                     
@@ -88,33 +107,36 @@ public final class ListarAlunosController {
                     if(listaralunos.getIdAlterarTreino().equals("") || listaralunos.getTituloDoTreino().equals("")){
                         throw new CampoVazioExceptionControler();
                     }
-                
-                System.out.println("lendo pessoas");
-                System.out.println(encontradas);
-                System.out.println(",,,,");
-                
-                System.out.println(pessoas);
-                PessoaDAO outroRepositorio = new PessoaDAO();
-   TreinoDAO treinosRepositorio = new TreinoDAO();
-    List<TreinoModel> treinos = treinosRepositorio.buscarTodos();
-    
-                for (PessoaModel p: pessoas ) {
                     
-                    String a= String.valueOf(p.getId());
-      
-                    if(listaralunos.getIdAlterarTreino().equals(a)){
+                    System.out.println("lendo pessoas");
+                    System.out.println(encontradas);
+                    System.out.println(",,,,");
+                    
+                    System.out.println(pessoas);
+                    PessoaDAO outroRepositorio = new PessoaDAO();
+                    TreinoDAO treinosRepositorio = new TreinoDAO();
+                    List<TreinoModel> treinos = treinosRepositorio.buscarTodos();
+                    
+                    for (PessoaModel p: pessoas ) {
                         
-                        for (TreinoModel t: treinos ){
-                            System.out.println("lendo treinos");
-                            if(listaralunos.getTituloDoTreino().equals(t.getTitulo())){
-                                
-                                
-                                outroRepositorio.atualizar(p,p.getId(),String.valueOf(t.getID()));
+                        String a= String.valueOf(p.getId());
+                        
+                        if(listaralunos.getIdAlterarTreino().equals(a)){
+                            
+                            for (TreinoModel t: treinos ){
+                                System.out.println("lendo treinos");
+                                if(listaralunos.getTituloDoTreino().equals(t.getTitulo())){
+                                    
+                                    //String.valueOf(t.getID())
+                                    outroRepositorio.atualizar(p,p.getId(),t.getTitulo());
+                                    listaralunos.ExibirMensagem("Treino alterado com sucesso");
+                                    
+                                    voltar();
+                                }
                             }
                         }
                     }
-                }
-            }catch(CampoVazioExceptionControler c){
+                }catch(CampoVazioExceptionControler c){
                     
                 }
             }

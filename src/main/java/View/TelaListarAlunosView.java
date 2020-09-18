@@ -9,11 +9,11 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class TelaListarAlunosView extends javax.swing.JFrame {
-
+    
     public TelaListarAlunosView() {
         initComponents();
     }
-
+    
     public String getIdAlterarTreino(){
         return tfIdAlunoAlterarTreino.getText();
     }
@@ -37,7 +37,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     public void adicionarAcaoAlterarHorario(ActionListener acao){
         btAlterarHorario.addActionListener(acao);
     }
-     public void adicionarAcaoBotaoAlterarTreino(ActionListener acao){
+    public void adicionarAcaoBotaoAlterarTreino(ActionListener acao){
         btAlterarTreino.addActionListener(acao);
     }
     public void limparDados(){
@@ -48,19 +48,21 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
-  public void addAcaoBotaoVoltar(ActionListener acao){
+    public void addAcaoBotaoVoltar(ActionListener acao){
         btVoltar.addActionListener(acao);
     }
-      public void setDadosTable(List<PessoaModel> encontradas) {
-
-      //botar a table aq
-       DefaultTableModel model = (DefaultTableModel)tabAlunos.getModel();
+    public void setDadosTable(List<PessoaModel> encontradas) {
         
-        for(PessoaModel aluno:encontradas){
-            model.addRow(new Object[]{aluno.getNome(),"treino","horario", aluno.getId()});
-        }
-      
-      }
+        //botar a table aq
+        DefaultTableModel model = (DefaultTableModel)tabAlunos.getModel();
+        
+        encontradas.forEach(aluno -> {
+            //id nome cpf nascimento treino horario
+            model.addRow(new Object[]{aluno.getId(),aluno.getNome(),aluno.getCpf(),aluno.getDataNascimento(),
+                aluno.getTreino(), aluno.getHorario()});
+        });
+        
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,7 +100,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "CPF", "Treino", "Horario", "ID", "Data de nascimento"
+                "ID", "Nome", "CPF", "Data de nascimento", "Treino", "Horario"
             }
         ) {
             Class[] types = new Class [] {
@@ -143,7 +145,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(173, Short.MAX_VALUE)
+                .addContainerGap(167, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -163,17 +165,16 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
                             .addComponent(lbIdAlunoAlterarHorario, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spnHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(spnHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(spnMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(spnMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btAlterarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel2)))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                            .addComponent(jLabel2))))
+                .addContainerGap(175, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,14 +236,14 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-  
+    
+    
     
     
     
     
     public static void main(String args[]) {
-      
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -260,7 +261,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaListarAlunosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaListarAlunosView().setVisible(true);
@@ -289,6 +290,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     private javax.swing.JTextField tfIdAlterarHorario;
     private javax.swing.JTextField tfIdAlunoAlterarTreino;
     // End of variables declaration//GEN-END:variables
-
-  
+    
+    
 }
