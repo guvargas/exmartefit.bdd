@@ -37,6 +37,9 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
    public void adicionarAcaoBotaoRegistrarTreino(ActionListener acao){
        btRegistrarTreino.addActionListener(acao);
    }
+   public void addAcaoBotaoVoltar(ActionListener acao){
+        btVoltar.addActionListener(acao);
+    }
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
@@ -54,6 +57,7 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
         btVisualizarAlunos = new javax.swing.JButton();
         btRegistrarAluno = new javax.swing.JButton();
         btRegistrarTreino = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,25 +71,33 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
 
         btRegistrarTreino.setText("Registrar Treino");
 
+        btVoltar.setText("Voltar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btRegistrarTreino)
-                    .addComponent(btRegistrarAluno)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(132, 132, 132)
-                            .addComponent(btBaterPonto))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(160, 160, 160)
-                            .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(122, 122, 122)
-                            .addComponent(btVisualizarAlunos))))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btRegistrarTreino)
+                            .addComponent(btRegistrarAluno)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(132, 132, 132)
+                                    .addComponent(btBaterPonto))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(160, 160, 160)
+                                    .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(122, 122, 122)
+                                    .addComponent(btVisualizarAlunos))))
+                        .addGap(0, 158, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btVoltar)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +112,9 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
                 .addComponent(btRegistrarAluno)
                 .addGap(18, 18, 18)
                 .addComponent(btRegistrarTreino)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(btVoltar)
+                .addContainerGap())
         );
 
         pack();
@@ -147,6 +161,7 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
     private javax.swing.JButton btRegistrarAluno;
     private javax.swing.JButton btRegistrarTreino;
     private javax.swing.JButton btVisualizarAlunos;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables
 }

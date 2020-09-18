@@ -8,9 +8,12 @@ import View.TelaInicialGerenteView;
 import View.TelaInicialInstrutorView;
 import View.TelaListarFuncionariosView;
 import View.TelaLoginView;
+import com.formdev.flatlaf.FlatDarkLaf;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 public class LoginController {
@@ -22,6 +25,11 @@ public class LoginController {
     PessoaModel encontrada = null;
     
     public LoginController() {
+         try {
+    UIManager.setLookAndFeel( new FlatDarkLaf() );
+} catch( UnsupportedLookAndFeelException ex ) {
+    System.err.println( "Failed to initialize LaF" );
+}
         loginView= new TelaLoginView();
         adicionarAcoesBotoes();
     }

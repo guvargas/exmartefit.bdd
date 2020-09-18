@@ -67,7 +67,6 @@ public final class ListarFuncionariosController {
                 if(listarFuncionarios.getId().equals("")){
                     throw new CampoVazioExceptionControler();
                 }
-                listarFuncionarios.ExibirMensagem(listarFuncionarios.getId());
                 
                 PontosDao pdao = new PontosDao();
                 List<PontoModel> listaPontos = pdao.buscarTodos();

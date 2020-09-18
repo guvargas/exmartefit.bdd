@@ -44,7 +44,17 @@ public class InicialTreinadorController {
                 RegistroAlunoController rgaluno = new RegistroAlunoController();
             }
         });
-    }    
+    } 
+     public void acaoVoltar(){
+        treinadorView.addAcaoBotaoVoltar(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                treinadorView.dispose();
+                LoginController n= new LoginController();
+                n.exibirTela();
+            }
+        }
+        );
+    }
     public void acaoRegistrarTreinos(){
         treinadorView.adicionarAcaoBotaoRegistrarTreino(new ActionListener() {
             @Override
