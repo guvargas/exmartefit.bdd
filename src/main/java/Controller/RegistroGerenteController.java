@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-
+import Controller.CampoVazioExceptionControler;
 /**
  *
  * @author asg75
@@ -34,10 +34,17 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Gerente", "-", "-");
-            PessoaDAO pdao = new PessoaDAO();
-            pdao.gravar(pessoaModel);  
-            voltar();
+            try{
+                if(tra.getNome().equals("") || tra.getCPF().equals("") || tra.getDataDeNascimento().equals("")){
+                    throw new CampoVazioExceptionControler();
+                }
+                PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Gerente", "-", "-");
+                PessoaDAO pdao = new PessoaDAO();
+                pdao.gravar(pessoaModel);  
+                voltar();
+            }catch(CampoVazioExceptionControler c){
+                
+            }
         }
     });
     }
