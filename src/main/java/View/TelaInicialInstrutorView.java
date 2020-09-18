@@ -30,6 +30,13 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
    public void adicionarAcaoBotaoAlunos(ActionListener acao){
        btVisualizarAlunos.addActionListener(acao);
    }
+    public void adicionarAcaoBotaoRegistrarAluno(ActionListener acao){
+       btRegistrarAluno.addActionListener(acao);
+   }
+   
+   public void adicionarAcaoBotaoRegistrarTreino(ActionListener acao){
+       btRegistrarTreino.addActionListener(acao);
+   }
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
@@ -45,6 +52,8 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
         lbNome = new javax.swing.JLabel();
         btBaterPonto = new javax.swing.JButton();
         btVisualizarAlunos = new javax.swing.JButton();
+        btRegistrarAluno = new javax.swing.JButton();
+        btRegistrarTreino = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,21 +63,28 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
 
         btVisualizarAlunos.setText("VisualizarAlunos");
 
+        btRegistrarAluno.setText("Registrar Aluno");
+
+        btRegistrarTreino.setText("Registrar Treino");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(btVisualizarAlunos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(btBaterPonto)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btRegistrarTreino)
+                    .addComponent(btRegistrarAluno)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(132, 132, 132)
+                            .addComponent(btBaterPonto))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(122, 122, 122)
+                            .addComponent(btVisualizarAlunos))))
                 .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -80,7 +96,11 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
                 .addComponent(btBaterPonto)
                 .addGap(38, 38, 38)
                 .addComponent(btVisualizarAlunos)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(btRegistrarAluno)
+                .addGap(18, 18, 18)
+                .addComponent(btRegistrarTreino)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -124,6 +144,8 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBaterPonto;
+    private javax.swing.JButton btRegistrarAluno;
+    private javax.swing.JButton btRegistrarTreino;
     private javax.swing.JButton btVisualizarAlunos;
     private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables

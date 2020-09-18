@@ -32,8 +32,27 @@ public class InicialTreinadorController {
     public void adicionarAcaoBotoes(){
         acaoVisualizarAlunos();
         acaoBaterPonto();
+        acaoRegistrarTreinos();
+        acaoRegistrarAlunos();
+        
     }
-    
+           
+    public void acaoRegistrarAlunos(){
+        treinadorView.adicionarAcaoBotaoRegistrarAluno(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //RegistroAlunoController rgaluno = new RegistroAlunoController();
+            }
+        });
+    }    
+    public void acaoRegistrarTreinos(){
+        treinadorView.adicionarAcaoBotaoRegistrarTreino(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegistroTreinoController rgtreino = new RegistroTreinoController();
+            }
+        });
+    }
     public void acaoVisualizarAlunos(){
         treinadorView.adicionarAcaoBotaoAlunos(new ActionListener() {
             @Override
@@ -42,7 +61,7 @@ public class InicialTreinadorController {
             }
         });
     }
-    
+ 
     public void acaoBaterPonto(){
         treinadorView.adicionarAcaoBotaoPonto(new ActionListener() {
             @Override
