@@ -24,7 +24,7 @@ public class TreinoDAO extends BaseDAO {
         }
     }
     
-    public TreinoModel remover(int id){
+    public void remover(int id){
         TreinoModel treino = null;
         try{
 
@@ -39,7 +39,7 @@ public class TreinoDAO extends BaseDAO {
         }finally {
             fecharConexao();
         }
-       return treino;
+       //return treino;
     }
     
     public TreinoModel buscarId(int id){

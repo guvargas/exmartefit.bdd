@@ -18,8 +18,6 @@ public class RegistroTreinoController {
     
     public RegistroTreinoController() {
         telaAdcTreino= new TelaAdicionarTreinoView();
-        
-       
         telaAdcTreino.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaAdcTreino.setTitle("ExMarteFit");
          adicionarAcoesBotoes();
@@ -75,8 +73,8 @@ public class RegistroTreinoController {
             public void actionPerformed(ActionEvent e) {
              
                     
-                    TreinoDAO treinoDAO = new TreinoDAO();
                     
+                     TreinoDAO treinoDAO = new TreinoDAO();
                     List<TreinoModel> listaModelo = treinoDAO.buscarTodos();
                     TreinoModel tm = null;
                     
@@ -85,8 +83,8 @@ public class RegistroTreinoController {
                             tm = treino;
                         }
                     }
-                    
-                    treinoDAO.remover(tm.getID());
+                    TreinoDAO tidao = new TreinoDAO();
+                    tidao.remover(tm.getID());
                     voltar();
                     
               

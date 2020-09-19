@@ -44,8 +44,8 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
        public void adicionarTreinoComboBox(String treino){
         cbTreino.addItem(treino);
     }
-           public Object getTituloDoTreino(){
-        return cbTreino.getSelectedItem();
+           public String getTituloDoTreino(){
+        return cbTreino.getSelectedItem().toString();
     }
     public void exibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
