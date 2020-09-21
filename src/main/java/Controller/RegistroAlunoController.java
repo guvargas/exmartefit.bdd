@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import Controller.CampoVazioExceptionControler;
+import javax.swing.JOptionPane;
 /**
  *
  * @author asg75
@@ -23,7 +24,7 @@ public class RegistroAlunoController {
 private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
 
     public RegistroAlunoController() {
-        adicionarAcaoBotao();
+        acoesBotoes();
         adicionarItensComboBox();
         tra.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         tra.setTitle("ExMarteFit");
@@ -38,17 +39,21 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Boolean cpfExistente = verificarCPF(tra.getCPF());
+           
             try{
-            if(tra.getNome().equals("")|| tra.getCPF().equals("") || tra.getDataDeNascimento().equals("") || tra.getHorarioTreini().equals("")|| cpfExistente==true){
+            if(tra.getNome().equals("")|| tra.getCPF().equals("") || tra.getDataDeNascimento().equals("") || tra.getHorarioTreini().equals("")){
                 throw new CampoVazioExceptionControler();
             }
+             if(verificarCPF(tra.getCPF())==true){
+                 JOptionPane.showMessageDialog(null, "CPF já registrado");
+            }else{
             if(tra.getTreinoSelecionado() != null){
             PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Aluno", tra.getTreinoSelecionado(), tra.getHorarioTreini());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
             tra.setVisible(false);
             tra.dispose();
+            }
             }
             }catch(CampoVazioExceptionControler c){
                 

@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import Controller.CampoVazioExceptionControler;
+import javax.swing.JOptionPane;
 /**
  *
  * @author asg75
@@ -35,15 +36,17 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Boolean cpfExistente = verificarCPF(tra.getCPF());
             try{
-                if(tra.getNome().equals("") || tra.getCPF().equals("") || tra.getDataDeNascimento().equals("")|| cpfExistente==true){
+                if(tra.getNome().equals("") || tra.getCPF().equals("") || tra.getDataDeNascimento().equals("")){
                     throw new CampoVazioExceptionControler();
-                }
+                }if(verificarCPF(tra.getCPF())==true){
+                 JOptionPane.showMessageDialog(null, "CPF já registrado");
+            }else{
                 PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Gerente", "-", "-");
                 PessoaDAO pdao = new PessoaDAO();
                 pdao.gravar(pessoaModel);  
                 voltar();
+                }
             }catch(CampoVazioExceptionControler c){
                 
             }

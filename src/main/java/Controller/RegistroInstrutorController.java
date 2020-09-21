@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import Controller.CampoVazioExceptionControler;
 import java.util.List;
+import javax.swing.JOptionPane;
 /**
  *
  * @author asg75
@@ -37,15 +38,17 @@ public class RegistroInstrutorController {
        tri.adicionarAcaoBotao(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-            Boolean cpfExistente = verificarCPF(tri.getCPF());
                try{
-                if(tri.getNome().equals("")  || tri.getCPF().equals("") || tri.getDataDeNascimento().equals("") || tri.getHorarioTrabalho().equals("") || cpfExistente==true){
+                if(tri.getNome().equals("")  || tri.getCPF().equals("") || tri.getDataDeNascimento().equals("") || tri.getHorarioTrabalho().equals("")){
                     throw new CampoVazioExceptionControler();
-                }
+                }if(verificarCPF(tri.getCPF())==true){
+                 JOptionPane.showMessageDialog(null, "CPF já registrado");
+            }else{
             PessoaModel pessoaModel = new PessoaModel(tri.getNome(), tri.getCPF(), tri.getDataDeNascimento(), "Instrutor", null,tri.getHorarioTrabalho());
             PessoaDAO pdao = new PessoaDAO();
             pdao.gravar(pessoaModel);  
            voltar();
+                }
             }catch(CampoVazioExceptionControler c){
             }
            }

@@ -6,11 +6,11 @@ import Model.PessoaModel;
 
 
 
-public class pessoateste {
+public class PessoaTeste {
      public static void main(String[] args){
       //PessoaModel(String nome, String cpf, String dataNascimento, String tipo, String treino, String horario) {
 
-        PessoaModel t = new PessoaModel("a", "c","18/10/2000", "Gerente", "Supino", "8 da manhã");
+        PessoaModel t = new PessoaModel("Admin", "Admin","0", "Gerente", "-", "-");
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.gravar(t);
        System.out.println(t);
