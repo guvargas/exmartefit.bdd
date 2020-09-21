@@ -16,6 +16,7 @@ public class MusicaGerencialControler {
     
     public MusicaGerencialControler(){
         adicionarAcoesBotoes();
+        telaMusica.setDadosTable(musicas);
         telaMusica.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaMusica.setTitle("ExMarteFit");
         exibirTela();

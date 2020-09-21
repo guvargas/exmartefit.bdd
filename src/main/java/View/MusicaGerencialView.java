@@ -26,9 +26,11 @@ public class MusicaGerencialView extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)tabMusica.getModel();
         
         for(MusicasModel musica:listaMusica){
-            model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor()});
+            model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor(),
+                musica.getPessoaNome(), musica.getPessoaId()});
         }
     };
+    
     public String getID(){
         return tfID.getText();
     }
@@ -71,17 +73,17 @@ public class MusicaGerencialView extends javax.swing.JFrame {
 
         tabMusica.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Musica", "Cantor"
+                "ID", "Musica", "Cantor", "Pessoa", "ID pessoa"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
