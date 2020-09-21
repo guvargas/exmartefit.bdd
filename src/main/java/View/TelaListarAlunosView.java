@@ -13,9 +13,9 @@ import javax.swing.table.DefaultTableModel;
 public class TelaListarAlunosView extends javax.swing.JFrame {
     
     public TelaListarAlunosView() {
-         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        this.setIconImage(imagemTitulo);
+//         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+//        this.setIconImage(imagemTitulo);
         initComponents();
     }
     
@@ -91,7 +91,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
         lbTituloDoTreino = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
         cbTreino = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,8 +145,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
 
         btVoltar.setText("Voltar");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gymlogo.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -179,7 +176,7 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -200,32 +197,25 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(btAlterarTreino)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
-                        .addComponent(jLabel5)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbIDAlutoAlterarTreino)
-                            .addComponent(lbTituloDoTreino)
-                            .addComponent(lbAlterarTreino))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfIdAlunoAlterarTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btAlterarTreino))
-                        .addGap(18, 18, 18)
-                        .addComponent(lbVizualizarAlunos)
-                        .addGap(4, 4, 4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbIDAlutoAlterarTreino)
+                    .addComponent(lbTituloDoTreino)
+                    .addComponent(lbAlterarTreino))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfIdAlunoAlterarTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAlterarTreino))
+                .addGap(18, 18, 18)
+                .addComponent(lbVizualizarAlunos)
+                .addGap(4, 4, 4)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lbAlterarHorario)
@@ -297,7 +287,6 @@ public class TelaListarAlunosView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbTreino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbAlterarHorario;

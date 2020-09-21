@@ -21,9 +21,9 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
     
     
     public TelaAdicionarTreinoView() {
-        java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        this.setIconImage(imagemTitulo);
+//        java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+//        this.setIconImage(imagemTitulo);
         initComponents();
     }
     
@@ -64,6 +64,7 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tfNomeTreino = new javax.swing.JTextField();
@@ -71,7 +72,6 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
         tfDescricaoTreino = new javax.swing.JTextField();
         btSalvar = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         lbTituloDoTreino = new javax.swing.JLabel();
         cbTreino = new javax.swing.JComboBox<>();
         btExcluir = new javax.swing.JButton();
@@ -85,8 +85,6 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
         btSalvar.setText("Salvar");
 
         btVoltar.setText("Voltar");
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gymlogo.png"))); // NOI18N
 
         lbTituloDoTreino.setText("Título do treino");
 
@@ -108,8 +106,7 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -134,29 +131,23 @@ public class TelaAdicionarTreinoView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfNomeTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfDescricaoTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btSalvar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfNomeTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfDescricaoTreino)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel5)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(btSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbTituloDoTreino, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btVoltar, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btExcluir))
-                        .addGap(15, 15, 15))))
+                    .addComponent(lbTituloDoTreino, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btVoltar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btExcluir))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,8 +212,8 @@ java.awt.EventQueue.invokeLater(new Runnable() {
     private javax.swing.JComboBox<String> cbTreino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel lbTituloDoTreino;
     private javax.swing.JTextField tfDescricaoTreino;
     private javax.swing.JTextField tfNomeTreino;

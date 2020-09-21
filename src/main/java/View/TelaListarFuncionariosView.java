@@ -24,9 +24,9 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
      * Creates new form TelaListarFuncionariosView
      */
     public TelaListarFuncionariosView() {
-         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        this.setIconImage(imagemTitulo);
+//         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+//        this.setIconImage(imagemTitulo);
         initComponents();
     }
      public String getId(){
