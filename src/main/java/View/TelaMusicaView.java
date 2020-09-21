@@ -24,9 +24,9 @@ public class TelaMusicaView extends javax.swing.JFrame {
      */
     
     public TelaMusicaView() {
-//        java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-//        this.setIconImage(imagemTitulo);
+        java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
     
@@ -60,6 +60,9 @@ public class TelaMusicaView extends javax.swing.JFrame {
         btAddMusica = new javax.swing.JButton();
         tfCantor = new javax.swing.JTextField();
         lbCantor = new javax.swing.JLabel();
+        btVoltar = new javax.swing.JButton();
+        imagem = new javax.swing.JLabel();
+        imagem3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,34 +93,55 @@ public class TelaMusicaView extends javax.swing.JFrame {
         lbCantor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbCantor.setText("Cantor");
 
+        btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/gymlogo.png"))); // NOI18N
+
+        imagem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/music.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(tfMusica, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCantor)
-                    .addComponent(lbCantor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btAddMusica))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbCantor, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(imagem)
+                        .addComponent(imagem3))
+                    .addComponent(btAddMusica, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btVoltar, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(tfCantor, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                    .addComponent(tfMusica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(16, 16, 16)
+                .addComponent(imagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(imagem3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbCantor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfCantor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(tfCantor, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btAddMusica)
-                .addGap(21, 21, 21))
+                .addGap(42, 42, 42)
+                .addComponent(btVoltar)
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -134,6 +158,10 @@ public class TelaMusicaView extends javax.swing.JFrame {
     private void tfCantorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCantorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCantorActionPerformed
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,6 +200,9 @@ public class TelaMusicaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAddMusica;
+    private javax.swing.JButton btVoltar;
+    private javax.swing.JLabel imagem;
+    private javax.swing.JLabel imagem3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbCantor;
     private javax.swing.JTextField tfCantor;

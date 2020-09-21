@@ -18,9 +18,9 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
 
  
     public TelaInicialAlunoView() {
-//         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-//        this.setIconImage(imagemTitulo);
+         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
        
@@ -51,20 +51,21 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
 
         jPanel = new javax.swing.JPanel();
         LbNome = new javax.swing.JLabel();
-        LbTituloDoTreino = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         taDescricaoDoTreino = new javax.swing.JTextArea();
         LbDescricao = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
         btMusica = new javax.swing.JButton();
+        LbTituloDoTreino = new javax.swing.JLabel();
+        imagem = new javax.swing.JLabel();
+        imagem1 = new javax.swing.JLabel();
+        imagem2 = new javax.swing.JLabel();
+        imagem3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LbNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LbNome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LbNome.setText("Nome");
-
-        LbTituloDoTreino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LbTituloDoTreino.setText("Titulo");
 
         taDescricaoDoTreino.setEditable(false);
         taDescricaoDoTreino.setColumns(20);
@@ -83,39 +84,83 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
 
         btMusica.setText("Playlist");
 
+        LbTituloDoTreino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LbTituloDoTreino.setText("Titulo");
+
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/gymlogo.png"))); // NOI18N
+
+        imagem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/haltere.png"))); // NOI18N
+
+        imagem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user.png"))); // NOI18N
+
+        imagem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/music.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LbTituloDoTreino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LbNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LbDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+            .addGroup(jPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(jPanelLayout.createSequentialGroup()
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LbDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
+                            .addComponent(LbTituloDoTreino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addGap(526, 526, 526)
+                                .addComponent(imagem2)
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(LbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(imagem))
+                                .addGap(0, 375, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addComponent(btMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(imagem3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btVoltar)))
-                .addContainerGap())
+                        .addComponent(btVoltar)
+                        .addGap(36, 36, 36))))
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(624, 624, 624)
+                .addComponent(imagem1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(LbNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addComponent(imagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LbNome)
+                        .addGap(106, 106, 106))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                        .addComponent(imagem2)
+                        .addGap(98, 98, 98)))
                 .addComponent(LbTituloDoTreino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LbDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btVoltar)
-                    .addComponent(btMusica))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imagem1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btMusica)
+                            .addComponent(btVoltar))
+                        .addGap(35, 35, 35))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                        .addComponent(imagem3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +171,7 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -177,6 +222,10 @@ public class TelaInicialAlunoView extends javax.swing.JFrame {
     private javax.swing.JLabel LbTituloDoTreino;
     private javax.swing.JButton btMusica;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JLabel imagem;
+    private javax.swing.JLabel imagem1;
+    private javax.swing.JLabel imagem2;
+    private javax.swing.JLabel imagem3;
     private javax.swing.JPanel jPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea taDescricaoDoTreino;

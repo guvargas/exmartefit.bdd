@@ -18,9 +18,9 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
 
  
     public TelaInicialInstrutorView() {
-//         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
-//        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
-//        this.setIconImage(imagemTitulo);
+         java.net.URL url = ClassLoader.getSystemResource("imagens/gymlogo.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
     }
        
@@ -68,6 +68,12 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
         btRegistrarTreino = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
         btPlaylist = new javax.swing.JButton();
+        imagem = new javax.swing.JLabel();
+        imagem1 = new javax.swing.JLabel();
+        imagem2 = new javax.swing.JLabel();
+        imagem3 = new javax.swing.JLabel();
+        imagem4 = new javax.swing.JLabel();
+        imagem5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,9 +82,9 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
         lbNome.setText("Nome");
         lbNome.setToolTipText("");
 
-        btBaterPonto.setText("BaterPonto");
+        btBaterPonto.setText("Bater Ponto");
 
-        btVisualizarAlunos.setText("VisualizarAlunos");
+        btVisualizarAlunos.setText("Visualizar Alunos");
 
         btRegistrarAluno.setText("Registrar Aluno");
 
@@ -88,50 +94,94 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
 
         btPlaylist.setText("Gerenciar Playlist");
 
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/gymlogo.png"))); // NOI18N
+
+        imagem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/livro.png"))); // NOI18N
+
+        imagem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/rapidez.png"))); // NOI18N
+
+        imagem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/music.png"))); // NOI18N
+
+        imagem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/haltere.png"))); // NOI18N
+
+        imagem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btVisualizarAlunos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btRegistrarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(lbNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(375, 375, 375)
+                .addComponent(imagem1)
+                .addGap(219, 219, 219)
+                .addComponent(imagem2)
+                .addGap(196, 196, 196)
+                .addComponent(imagem3)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(imagem)
+                .addGap(583, 583, 583))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(368, 368, 368)
+                .addComponent(imagem5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imagem4)
+                .addGap(397, 397, 397))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(329, 329, 329)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btVoltar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btRegistrarTreino, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btBaterPonto)
-                        .addGap(18, 18, 18))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btVisualizarAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(149, 149, 149)
+                                .addComponent(btBaterPonto))
+                            .addComponent(btRegistrarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(117, 117, 117)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btRegistrarTreino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btVoltar)))
+                .addContainerGap(353, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(imagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbNome, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btBaterPonto)
-                    .addComponent(btVisualizarAlunos))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btRegistrarAluno)
-                    .addComponent(btRegistrarTreino))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(btVoltar))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imagem1)
+                            .addComponent(imagem2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btPlaylist)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btVisualizarAlunos)
+                            .addComponent(btBaterPonto)
+                            .addComponent(btPlaylist))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(imagem4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btRegistrarTreino))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(imagem5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btRegistrarAluno))))
+                    .addComponent(imagem3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
+                .addComponent(btVoltar)
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -180,6 +230,12 @@ public class TelaInicialInstrutorView extends javax.swing.JFrame {
     private javax.swing.JButton btRegistrarTreino;
     private javax.swing.JButton btVisualizarAlunos;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JLabel imagem;
+    private javax.swing.JLabel imagem1;
+    private javax.swing.JLabel imagem2;
+    private javax.swing.JLabel imagem3;
+    private javax.swing.JLabel imagem4;
+    private javax.swing.JLabel imagem5;
     private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables
 }
