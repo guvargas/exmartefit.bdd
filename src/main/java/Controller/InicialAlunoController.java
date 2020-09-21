@@ -14,7 +14,7 @@ public final class InicialAlunoController {
     
     
     private final TelaInicialAlunoView alunoView= new TelaInicialAlunoView();
-    
+    private PessoaModel usuario;
     
     
     InicialAlunoController(PessoaModel encontrada) {
@@ -23,6 +23,7 @@ public final class InicialAlunoController {
         alunoView.SetTreino(encontrada.getNome(),treino.getTitulo(), treino.getDescricao());
         adicionarAcoesBotoes();
         alunoView.setTitle("ExMarteFit");
+        usuario = encontrada;
         exibirTela();
     }
     
@@ -49,7 +50,7 @@ public final class InicialAlunoController {
     public void acaoMusica(){
         alunoView.addAcaoBtMusica(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MusicaControler mc = new MusicaControler();
+                MusicaControler mc = new MusicaControler(usuario);
             }
         });
     }

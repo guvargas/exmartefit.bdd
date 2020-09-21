@@ -63,7 +63,7 @@ public class LoginController {
             for (PessoaModel p: pessoas ) {
                 System.out.println(p.toString());
                 if(p.getCpf().equals(Senha) && p.getNome().equals(Login)){
-                    System.out.println("achoouu");
+                    System.out.println("passou");
                     encontrada= p;
                 }
             }

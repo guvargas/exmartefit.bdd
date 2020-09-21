@@ -1,6 +1,7 @@
 package Controller;
 import Dao.MusicaDAO;
 import Model.MusicasModel;
+import Model.PessoaModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -12,13 +13,14 @@ public class MusicaControler {
     private TelaMusicaView telaMusica= new TelaMusicaView();
     MusicaDAO musicaRepositorio = new MusicaDAO();
     List<MusicasModel> musicas = musicaRepositorio.buscarTodos();
+    PessoaModel usuario;
     
-    
-    public MusicaControler() {
+    public MusicaControler(PessoaModel encontrada) {
         
         adicionarAcoesBotoes();
         telaMusica.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaMusica.setTitle("ExMarteFit");
+        usuario = encontrada;
         exibirTela();
         
     }
@@ -35,7 +37,7 @@ public class MusicaControler {
                     throw new CampoVazioExceptionControler();
                 }
                 
-                MusicasModel nMusica = new MusicasModel(telaMusica.getMusica(), telaMusica.getCantor());
+                MusicasModel nMusica = new MusicasModel(telaMusica.getMusica(), telaMusica.getCantor(), usuario.getId(), usuario.getNome());
                 MusicaDAO mdao=new MusicaDAO();
                 mdao.gravar(nMusica);
                 telaMusica.setVisible(false);
