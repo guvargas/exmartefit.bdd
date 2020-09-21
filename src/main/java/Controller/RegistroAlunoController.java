@@ -38,8 +38,9 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            Boolean cpfExistente = verificarCPF(tra.getCPF());
             try{
-            if(tra.getNome().equals("")|| tra.getCPF().equals("") || tra.getDataDeNascimento().equals("") || tra.getHorarioTreini().equals("")){
+            if(tra.getNome().equals("")|| tra.getCPF().equals("") || tra.getDataDeNascimento().equals("") || tra.getHorarioTreini().equals("")|| cpfExistente==true){
                 throw new CampoVazioExceptionControler();
             }
             if(tra.getTreinoSelecionado() != null){
@@ -79,5 +80,17 @@ private final TelaRegistrarAlunoView tra = new TelaRegistrarAlunoView();
     
     public void exibirTela(){
         tra.setVisible(true);
+    }
+    
+    public boolean verificarCPF(String cpf){
+        PessoaDAO pdao = new PessoaDAO();
+        List<PessoaModel> listaPessoa = pdao.buscarTodos();
+        
+        for(PessoaModel pessoa : listaPessoa){
+            if(pessoa.getCpf().equals(cpf)){
+                return true;
+            }
+        }
+        return false;
     }
 }

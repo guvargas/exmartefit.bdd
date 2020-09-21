@@ -35,8 +35,9 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
     tra.adicionarAcaoBotao(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            Boolean cpfExistente = verificarCPF(tra.getCPF());
             try{
-                if(tra.getNome().equals("") || tra.getCPF().equals("") || tra.getDataDeNascimento().equals("")){
+                if(tra.getNome().equals("") || tra.getCPF().equals("") || tra.getDataDeNascimento().equals("")|| cpfExistente==true){
                     throw new CampoVazioExceptionControler();
                 }
                 PessoaModel pessoaModel = new PessoaModel(tra.getNome(), tra.getCPF(), tra.getDataDeNascimento(), "Gerente", "-", "-");
@@ -66,5 +67,17 @@ private final TelaRegistrarGerenteView tra = new TelaRegistrarGerenteView();
  
     public void exibirTela(){
         tra.setVisible(true);
+    }
+    
+    public boolean verificarCPF(String cpf){
+        PessoaDAO pdao = new PessoaDAO();
+        List<PessoaModel> listaPessoa = pdao.buscarTodos();
+        
+        for(PessoaModel pessoa : listaPessoa){
+            if(pessoa.getCpf().equals(cpf)){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import Controller.CampoVazioExceptionControler;
+import java.util.List;
 /**
  *
  * @author asg75
@@ -36,8 +37,9 @@ public class RegistroInstrutorController {
        tri.adicionarAcaoBotao(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-            try{
-                if(tri.getNome().equals("")  || tri.getCPF().equals("") || tri.getDataDeNascimento().equals("") || tri.getHorarioTrabalho().equals("")){
+            Boolean cpfExistente = verificarCPF(tri.getCPF());
+               try{
+                if(tri.getNome().equals("")  || tri.getCPF().equals("") || tri.getDataDeNascimento().equals("") || tri.getHorarioTrabalho().equals("") || cpfExistente==true){
                     throw new CampoVazioExceptionControler();
                 }
             PessoaModel pessoaModel = new PessoaModel(tri.getNome(), tri.getCPF(), tri.getDataDeNascimento(), "Instrutor", null,tri.getHorarioTrabalho());
@@ -68,4 +70,16 @@ public class RegistroInstrutorController {
    public void exibirTela(){
        tri.setVisible(true);
    }
+   
+   public boolean verificarCPF(String cpf){
+        PessoaDAO pdao = new PessoaDAO();
+        List<PessoaModel> listaPessoa = pdao.buscarTodos();
+        
+        for(PessoaModel pessoa : listaPessoa){
+            if(pessoa.getCpf().equals(cpf)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
