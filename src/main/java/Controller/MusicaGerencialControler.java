@@ -1,5 +1,6 @@
 package Controller;
 import Dao.MusicaDAO;
+import Dao.Pessoa_MusicaDao;
 import Model.MusicasModel;
 import View.MusicaGerencialView;
 import java.awt.event.ActionEvent;
@@ -35,8 +36,9 @@ public class MusicaGerencialControler {
                 }
                 
                 MusicaDAO mdao=new MusicaDAO();
-                mdao.remover(Integer.parseInt(telaMusica.getID()));
                 
+                mdao.remover(Integer.parseInt(telaMusica.getID()));
+               
                 
                 }catch(CampoVazioExceptionControler c){
                 }
