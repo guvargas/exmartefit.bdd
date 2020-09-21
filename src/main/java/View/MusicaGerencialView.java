@@ -6,6 +6,7 @@
 package View;
 
 import Model.MusicasModel;
+import Model.PessoaMusicaModel;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -22,12 +23,18 @@ public class MusicaGerencialView extends javax.swing.JFrame {
     public MusicaGerencialView() {
         initComponents();
     }
-    public void setDadosTable(List<MusicasModel> listaMusica){
+    public void setDadosTable(List<MusicasModel> listaMusica, List<PessoaMusicaModel> listaAssociativa){
         DefaultTableModel model = (DefaultTableModel)tabMusica.getModel();
         
         for(MusicasModel musica:listaMusica){
-            model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor(),
-                musica.getPessoaNome(), musica.getPessoaId()});
+            //for(Pessoa_MusicaModel pmm : listaAssociativa )
+            //{
+                //System.out.println("hahahaha");
+                //if(pmm.getIdMusica() == musica.getId()){
+                //model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor(), pmm.getIdPessoa()});
+                //}
+            //}
+            
         }
     };
     
@@ -73,17 +80,17 @@ public class MusicaGerencialView extends javax.swing.JFrame {
 
         tabMusica.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Musica", "Cantor", "Pessoa", "ID pessoa"
+                "ID", "Musica", "Cantor", "ID pessoa"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {

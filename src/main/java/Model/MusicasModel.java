@@ -19,18 +19,16 @@ public class MusicasModel implements Serializable{
     
     private String nome;
     private String cantor;
-    private int pessoaId;
-    private String pessoaNome;
+
     
     private static final long serialVersionUID = 299569408537971270L;
     
     public MusicasModel(){
     }
-    public MusicasModel(String nome, String cantor, int pessoaId, String pessoaNome) {
+    public MusicasModel(String nome, String cantor) {
         this.nome = nome;
         this.cantor = cantor;
-        this.pessoaId = pessoaId;
-        this.pessoaNome = pessoaNome;
+  
     }
 
       public int getId() {
@@ -45,13 +43,7 @@ public class MusicasModel implements Serializable{
         return cantor;
     }
 
-    public int getPessoaId() {
-        return pessoaId;
-    }
-
-    public String getPessoaNome() {
-        return pessoaNome;
-    }
+    
     
     
     

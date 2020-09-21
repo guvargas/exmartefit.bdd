@@ -1,7 +1,8 @@
 package Controller;
 import Dao.MusicaDAO;
-import Dao.Pessoa_MusicaDao;
+import Dao.PessoaMusicaDao;
 import Model.MusicasModel;
+import Model.PessoaMusicaModel;
 import View.MusicaGerencialView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,10 +15,12 @@ public class MusicaGerencialControler {
     private MusicaGerencialView telaMusica= new MusicaGerencialView();
     MusicaDAO musicaRepositorio = new MusicaDAO();
     List<MusicasModel> musicas = musicaRepositorio.buscarTodos();
-    
-    public MusicaGerencialControler(){
+    PessoaMusicaDao pmdao = new PessoaMusicaDao();
+    List<PessoaMusicaModel> listaAssos =pmdao.buscarTodos();
+   
+        public MusicaGerencialControler(){
         adicionarAcoesBotoes();
-        telaMusica.setDadosTable(musicas);
+        telaMusica.setDadosTable(musicas, listaAssos);
         telaMusica.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaMusica.setTitle("ExMarteFit");
         exibirTela();

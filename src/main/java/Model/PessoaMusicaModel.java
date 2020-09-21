@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Pessoa_Musica")
-public class Pessoa_MusicaModel {
+public class PessoaMusicaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,7 +26,7 @@ public class Pessoa_MusicaModel {
     private int idPessoa;
     private int idMusica;
     
-    public Pessoa_MusicaModel(int idPessoa, int idMusica) {
+    public PessoaMusicaModel(int idPessoa, int idMusica) {
         this.idPessoa = idPessoa;
         this.idMusica = idMusica;
     }

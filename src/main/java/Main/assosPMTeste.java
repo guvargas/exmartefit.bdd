@@ -5,8 +5,11 @@
  */
 package Main;
 
-import Dao.Pessoa_MusicaDao;
-import Model.Pessoa_MusicaModel;
+import Dao.MusicaDAO;
+import Dao.PessoaMusicaDao;
+import Model.MusicasModel;
+import Model.PessoaMusicaModel;
+import java.util.List;
 
 /**
  *
@@ -14,10 +17,12 @@ import Model.Pessoa_MusicaModel;
  */
 public class assosPMTeste {
     public static void main(String[] args) {
-        Pessoa_MusicaDao pmd = new Pessoa_MusicaDao();
+        PessoaMusicaDao pmdao = new PessoaMusicaDao();
         
-        Pessoa_MusicaModel pmm = new Pessoa_MusicaModel(1, 1);
+        List<PessoaMusicaModel> listaPessoa_Musica = pmdao.buscarTodos();
         
-        pmd.gravar(pmm);
+        for(PessoaMusicaModel pmm : listaPessoa_Musica){
+            System.out.println("oi");
+        }
     }
 }

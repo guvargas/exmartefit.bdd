@@ -7,7 +7,7 @@
     <class>Model.HorariosInstrutorModel</class>
     <class>Model.PontoModel</class>
     <class>Model.MusicasModel</class>
-    <class>Model.Pessoa_MusicaModel</class>
+    <class>Model.PessoaMusicaModel</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/exMARTEfit"/>

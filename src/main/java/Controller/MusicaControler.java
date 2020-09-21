@@ -1,7 +1,9 @@
 package Controller;
 import Dao.MusicaDAO;
+import Dao.PessoaMusicaDao;
 import Model.MusicasModel;
 import Model.PessoaModel;
+import Model.PessoaMusicaModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -37,9 +39,21 @@ public class MusicaControler {
                     throw new CampoVazioExceptionControler();
                 }
                 
-                MusicasModel nMusica = new MusicasModel(telaMusica.getMusica(), telaMusica.getCantor(), usuario.getId(), usuario.getNome());
+                MusicasModel nMusica = new MusicasModel(telaMusica.getMusica(), telaMusica.getCantor());
                 MusicaDAO mdao=new MusicaDAO();
                 mdao.gravar(nMusica);
+                
+                MusicaDAO musicaBdd = new MusicaDAO();
+                PessoaMusicaDao pmDao = new PessoaMusicaDao();
+                List<MusicasModel> listaMusicas = musicaBdd.buscarTodos();
+                
+                for(MusicasModel lm : listaMusicas){
+                    if(lm.getCantor().equals(nMusica.getCantor())&& lm.getNome().equals(nMusica.getNome())){
+                        PessoaMusicaModel pmm = new PessoaMusicaModel(usuario.getId(), lm.getId());
+                        pmDao.gravar(pmm);
+                    }
+                }
+                
                 telaMusica.setVisible(false);
                 telaMusica.dispose();
                 
