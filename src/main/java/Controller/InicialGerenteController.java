@@ -37,6 +37,7 @@ public class InicialGerenteController {
         acaoAlterarSenha(pes);
         acaoListarAlunos();
         acaoListarInstrutores();
+        acaoPlaylist();
     }
     
     
@@ -76,6 +77,16 @@ public class InicialGerenteController {
         }
         );
     }
+    
+    public void acaoPlaylist(){
+        gerenteView.addAcaoBotaoGerenciarPlaylist(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MusicaGerencialControler a= new MusicaGerencialControler();
+            }
+        }
+        );
+    }
+    
     public void acaoRegistrar(){
         gerenteView.addAcaoBotaoRegistrar(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

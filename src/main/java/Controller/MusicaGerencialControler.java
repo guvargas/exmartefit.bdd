@@ -1,45 +1,41 @@
 package Controller;
 import Dao.MusicaDAO;
 import Model.MusicasModel;
+import View.MusicaGerencialView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import View.TelaMusicaView;
 
-public class MusicaControler {
-    
-    private TelaMusicaView telaMusica= new TelaMusicaView();
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+
+public class MusicaGerencialControler {
+    private MusicaGerencialView telaMusica= new MusicaGerencialView();
     MusicaDAO musicaRepositorio = new MusicaDAO();
     List<MusicasModel> musicas = musicaRepositorio.buscarTodos();
     
-    
-    public MusicaControler() {
-        
+    public MusicaGerencialControler(){
         adicionarAcoesBotoes();
         telaMusica.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaMusica.setTitle("ExMarteFit");
         exibirTela();
-        
     }
     
      public void adicionarAcoesBotoes(){
-        acaoAdicionarMusica();
+        acaoRemoverMusica();
     }
-    
-      public void acaoAdicionarMusica(){
-        telaMusica.adicionarAcaoBotao(new ActionListener() {
+     
+     public void acaoRemoverMusica(){
+         telaMusica.adicionarAcaoBotao(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try{
-                if(telaMusica.getMusica().equals("") || telaMusica.getCantor().equals("")){
+                if(telaMusica.getID().equals("")){
                     throw new CampoVazioExceptionControler();
                 }
                 
-                MusicasModel nMusica = new MusicasModel(telaMusica.getMusica(), telaMusica.getCantor());
                 MusicaDAO mdao=new MusicaDAO();
-                mdao.gravar(nMusica);
-                telaMusica.setVisible(false);
-                telaMusica.dispose();
+                mdao.remover(Integer.parseInt(telaMusica.getID()));
+                
                 
                 }catch(CampoVazioExceptionControler c){
                 }
@@ -47,9 +43,9 @@ public class MusicaControler {
             }
         }
         );
-    }
-      
-    public void exibirTela(){
+     }
+     
+     public void exibirTela(){
         telaMusica.setVisible(true);
     }
 }

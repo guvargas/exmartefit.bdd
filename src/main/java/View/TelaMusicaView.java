@@ -42,14 +42,6 @@ public class TelaMusicaView extends javax.swing.JFrame {
         btAddMusica.addActionListener(acao);
     }
     
-    public void setDadosTable(List<MusicasModel> listaMusica){
-        DefaultTableModel model = (DefaultTableModel)tabListaMusicas.getModel();
-        
-        for(MusicasModel musica: listaMusica){
-            model.addRow(new Object[]{musica.getNome(), musica.getCantor()});
-        }
-    };
-    
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }
@@ -66,9 +58,6 @@ public class TelaMusicaView extends javax.swing.JFrame {
         tfMusica = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btAddMusica = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabListaMusicas = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
         tfCantor = new javax.swing.JTextField();
         lbCantor = new javax.swing.JLabel();
 
@@ -91,22 +80,6 @@ public class TelaMusicaView extends javax.swing.JFrame {
             }
         });
 
-        tabListaMusicas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabListaMusicas);
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Lista de Musicas");
-
         tfCantor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfCantor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,19 +95,13 @@ public class TelaMusicaView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(tfMusica)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                            .addComponent(tfCantor)
-                            .addComponent(lbCantor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btAddMusica)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(tfMusica, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCantor)
+                    .addComponent(lbCantor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAddMusica))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,17 +111,13 @@ public class TelaMusicaView extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbCantor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfCantor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btAddMusica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -210,10 +173,7 @@ public class TelaMusicaView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAddMusica;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbCantor;
-    private javax.swing.JTable tabListaMusicas;
     private javax.swing.JTextField tfCantor;
     private javax.swing.JTextField tfMusica;
     // End of variables declaration//GEN-END:variables

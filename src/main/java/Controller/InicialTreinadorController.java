@@ -36,6 +36,7 @@ public class InicialTreinadorController {
         acaoRegistrarTreinos();
         acaoRegistrarAlunos();
         acaoVoltar();
+        acaoPlaylist();
     }
            
     public void acaoRegistrarAlunos(){
@@ -83,7 +84,14 @@ public class InicialTreinadorController {
         });
     }
     
-    
+    public void acaoPlaylist(){
+        treinadorView.addAcaoBotaoGerenciarPlaylist(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MusicaGerencialControler a= new MusicaGerencialControler();
+            }
+        }
+        );
+    }
     
     
     public void exibirTela(){

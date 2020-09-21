@@ -42,7 +42,16 @@ public final class InicialAlunoController {
     }
     
     public void adicionarAcoesBotoes(){
+        acaoMusica();
         acaoVoltar();
+    }
+    
+    public void acaoMusica(){
+        alunoView.addAcaoBtMusica(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MusicaControler mc = new MusicaControler();
+            }
+        });
     }
     
     public void acaoVoltar(){

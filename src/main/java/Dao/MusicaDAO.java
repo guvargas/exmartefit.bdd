@@ -24,12 +24,14 @@ public class MusicaDAO extends BaseDAO{
     }
     
     public void remover(int id){
-     MusicasModel pessoa = null;
+     MusicasModel m = null;
         try{
+            System.out.println(id);
             em.getTransaction().begin();
-           pessoa = em.find(MusicasModel.class,id );
-           
-           em.remove(pessoa);
+           m = em.find(MusicasModel.class,id );
+           System.out.println("--------------------------");
+           System.out.println(m);
+           em.remove(m);
            em.getTransaction().commit();
 
         }catch(Exception e){
@@ -38,6 +40,7 @@ public class MusicaDAO extends BaseDAO{
         }finally {
             fecharConexao();
         }
+        //return musica
     }
     
     public List<MusicasModel> buscarTodos(){
@@ -45,7 +48,7 @@ public class MusicaDAO extends BaseDAO{
        List<MusicasModel> musica = null;
 
        try{
-           musica = em.createQuery("from PessoaModel").getResultList();
+           musica = em.createQuery("from MusicasModel").getResultList();
 
        }catch (Exception e){
             em.getTransaction().rollback();
