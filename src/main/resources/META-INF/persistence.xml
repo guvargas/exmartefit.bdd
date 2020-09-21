@@ -7,6 +7,7 @@
     <class>Model.PessoaModel</class>
         <class>Model.HorariosInstrutorModel</class>
         <class>Model.PontoModel</class>
+        <class>Model.MusicasModel</class>
 
     
     <properties>

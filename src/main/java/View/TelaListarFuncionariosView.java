@@ -69,7 +69,6 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
         tfIdVizualizarPontosBatidos = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btVisualizarPontosBatidos = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
         taPontosBatidos = new javax.swing.JScrollPane();
         taPontos = new javax.swing.JTextArea();
@@ -112,8 +111,6 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gymlogo.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -134,17 +131,11 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 11, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(lbListarFuncionarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,7 +229,6 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
     private javax.swing.JButton btVisualizarPontosBatidos;
     private javax.swing.JButton btVoltar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbListarFuncionarios;
