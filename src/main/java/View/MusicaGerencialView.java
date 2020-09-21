@@ -24,16 +24,18 @@ public class MusicaGerencialView extends javax.swing.JFrame {
         initComponents();
     }
     public void setDadosTable(List<MusicasModel> listaMusica, List<PessoaMusicaModel> listaAssociativa){
+
         DefaultTableModel model = (DefaultTableModel)tabMusica.getModel();
         
         for(MusicasModel musica:listaMusica){
-            //for(Pessoa_MusicaModel pmm : listaAssociativa )
-            //{
-                //System.out.println("hahahaha");
-                //if(pmm.getIdMusica() == musica.getId()){
-                //model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor(), pmm.getIdPessoa()});
-                //}
-            //}
+            
+            for(PessoaMusicaModel pmm : listaAssociativa )
+            {
+                System.out.println("hahahaha");
+                if(pmm.getIdMusica() == musica.getId()){
+                model.addRow(new Object[]{musica.getId(), musica.getNome(), musica.getCantor(), pmm.getIdPessoa()});
+                }
+            }
             
         }
     };

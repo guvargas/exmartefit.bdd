@@ -20,6 +20,12 @@ public class MusicaGerencialControler {
    
         public MusicaGerencialControler(){
         adicionarAcoesBotoes();
+        System.out.println(listaAssos);
+                System.out.println(musicas);
+
+        
+        
+        
         telaMusica.setDadosTable(musicas, listaAssos);
         telaMusica.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         telaMusica.setTitle("ExMarteFit");

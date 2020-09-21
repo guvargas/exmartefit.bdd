@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Dao;
 
 import Model.PessoaMusicaModel;
 import java.util.List;
 
-/**
- *
- * @author asg75
- */
+
 public class PessoaMusicaDao extends BaseDAO {
 
     public PessoaMusicaDao() {
@@ -37,7 +29,7 @@ public class PessoaMusicaDao extends BaseDAO {
        List<PessoaMusicaModel> pmd = null;
 
        try{
-           pmd = em.createQuery("from pessoaMusicaModel").getResultList();
+           pmd = em.createQuery("from PessoaMusicaModel").getResultList();
 
        }catch (Exception e){
             em.getTransaction().rollback();

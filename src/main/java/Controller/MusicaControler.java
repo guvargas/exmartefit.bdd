@@ -43,13 +43,16 @@ public class MusicaControler {
                 MusicaDAO mdao=new MusicaDAO();
                 mdao.gravar(nMusica);
                 
+                
                 MusicaDAO musicaBdd = new MusicaDAO();
-                PessoaMusicaDao pmDao = new PessoaMusicaDao();
                 List<MusicasModel> listaMusicas = musicaBdd.buscarTodos();
                 
+              
+                
                 for(MusicasModel lm : listaMusicas){
-                    if(lm.getCantor().equals(nMusica.getCantor())&& lm.getNome().equals(nMusica.getNome())){
+                    if(lm.getCantor().equals(telaMusica.getCantor())  &&   lm.getNome().equals(telaMusica.getMusica())){
                         PessoaMusicaModel pmm = new PessoaMusicaModel(usuario.getId(), lm.getId());
+                        PessoaMusicaDao pmDao = new PessoaMusicaDao();
                         pmDao.gravar(pmm);
                     }
                 }

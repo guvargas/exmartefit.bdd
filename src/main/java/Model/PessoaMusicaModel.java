@@ -5,19 +5,17 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author asg75
- */
+
 @Entity
-@Table(name = "Pessoa_Musica")
-public class PessoaMusicaModel {
+@Table(name = "AssociacaoPessoaMusica")
+public class PessoaMusicaModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +23,9 @@ public class PessoaMusicaModel {
     
     private int idPessoa;
     private int idMusica;
+
+    public PessoaMusicaModel() {
+    }
     
     public PessoaMusicaModel(int idPessoa, int idMusica) {
         this.idPessoa = idPessoa;
