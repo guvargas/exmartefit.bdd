@@ -29,8 +29,27 @@ public class MusicaControler {
     
      public void adicionarAcoesBotoes(){
         acaoAdicionarMusica();
+        acaoVoltar();
     }
-    
+     public void acaoVoltar(){
+        telaMusica.adicionarAcaoBotaoVoltar(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try{
+                if(telaMusica.getMusica().equals("") || telaMusica.getCantor().equals("")){
+                    throw new CampoVazioExceptionControler();
+                }
+                telaMusica.setVisible(false);
+                telaMusica.dispose();
+                
+                }catch(CampoVazioExceptionControler c){
+                }
+            
+            }
+        }
+        );
+    }
+     
+     
       public void acaoAdicionarMusica(){
         telaMusica.adicionarAcaoBotao(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

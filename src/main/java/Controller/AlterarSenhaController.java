@@ -43,9 +43,16 @@ public class AlterarSenhaController {
        
 
                 pdao.atualizarSenha(pes, pes.getId(), tas.getSenha());
+                         voltar();
+
                 }catch(CampoVazioExceptionControler c){
                 }
             }
         });
+    }
+
+       public void voltar(){
+        tas.setVisible(false);
+        tas.dispose();
     }
 }

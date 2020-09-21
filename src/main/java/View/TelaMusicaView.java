@@ -42,6 +42,10 @@ public class TelaMusicaView extends javax.swing.JFrame {
         btAddMusica.addActionListener(acao);
     }
     
+        
+    public void adicionarAcaoBotaoVoltar(ActionListener acao){
+        btVoltar.addActionListener(acao);
+    }
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);
     }

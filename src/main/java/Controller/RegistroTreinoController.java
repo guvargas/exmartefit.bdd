@@ -58,7 +58,8 @@ public class RegistroTreinoController {
                     TreinoModel t = new TreinoModel(telaAdcTreino.getTituloTreino(),telaAdcTreino.getDescricaoTreino());
                     TreinoDAO treinoDAO = new TreinoDAO();
                     treinoDAO.gravar(t);
-                    
+                                        voltar();
+
                 }catch(CampoVazioExceptionControler c){
                 }
                 
@@ -93,7 +94,8 @@ public class RegistroTreinoController {
             
         }
         );
-    }
+    }                  
+
        public void voltar(){
         telaAdcTreino.setVisible(false);
         telaAdcTreino.dispose();

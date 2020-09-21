@@ -27,11 +27,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lbCantor" alignment="2" min="-2" pref="151" max="-2" attributes="0"/>
-                  <Group type="103" alignment="2" groupAlignment="2" attributes="0">
-                      <Component id="jLabel1" alignment="2" min="-2" pref="151" max="-2" attributes="0"/>
-                      <Component id="imagem" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="imagem3" alignment="2" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel1" alignment="2" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="imagem" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="imagem3" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="btAddMusica" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="btVoltar" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="tfCantor" alignment="0" pref="988" max="32767" attributes="0"/>

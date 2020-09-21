@@ -41,7 +41,7 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)tabFuncionarios.getModel();
         
         for(PessoaModel instrutor:listaFuncionarios){
-            model.addRow(new Object[]{instrutor.getNome(), instrutor.getId()});
+            model.addRow(new Object[]{ instrutor.getId(),instrutor.getNome(), instrutor.getDataNascimento(), instrutor.getCpf()});
         }
     };
     public void ExibirMensagem(String mensagem){
@@ -124,14 +124,14 @@ public class TelaListarFuncionariosView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "ID"
+                "ID", "Nome", "Data de Nascimento", "CPF"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, true, false
             };
 
             public Class getColumnClass(int columnIndex) {

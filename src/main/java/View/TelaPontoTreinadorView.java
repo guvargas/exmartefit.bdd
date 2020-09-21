@@ -34,6 +34,9 @@ public class TelaPontoTreinadorView extends javax.swing.JFrame {
     public void addAcaoBotaoBaterPonto(ActionListener acao){
         btBaterPontos.addActionListener(acao);
     }
+     public void addAcaoBotaoVoltar(ActionListener acao){
+        btVoltar.addActionListener(acao);
+    }
     
     public void ExibirMensagem(String mensagem){
         JOptionPane.showMessageDialog(null, mensagem);

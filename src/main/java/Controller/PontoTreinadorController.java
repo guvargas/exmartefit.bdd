@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package Controller;
 
 import Dao.PontosDao;
@@ -11,8 +11,8 @@ import View.TelaPontoTreinadorView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;    
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
@@ -32,6 +32,24 @@ public class PontoTreinadorController {
         exibirTela();
     }
     
+    public void adicionarAcoesBotoes(){
+        
+        
+        
+    }
+    public void adicionarAcaoBotaoVoltar(){
+        telaPonto.addAcaoBotaoVoltar(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                telaPonto.setVisible(false);
+                telaPonto.dispose();
+            }
+        });
+        
+        
+    }
+    
     public void adicionarAcaoBotaoBaterPonto(PontoModel pontoBatido){
         telaPonto.addAcaoBotaoBaterPonto(new ActionListener(){
             @Override
@@ -43,13 +61,13 @@ public class PontoTreinadorController {
             }
         });
         
-      
+        
     }
     
     public String getCurrentDate(){
-         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-          LocalDateTime now = LocalDateTime.now();
-          return dtf.format(now);  
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
     }
     
     public void adicionarHistoricoDePontosBatidos(int idInstrutor){
@@ -59,7 +77,7 @@ public class PontoTreinadorController {
         
         for(PontoModel pm : listaPontos){
             if(pm.getIdDoInstrutor()==idInstrutor){
-                 
+                
                 sb.append(pm.getHorario()+"\n");
             }
         }
