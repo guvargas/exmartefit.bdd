@@ -37,7 +37,7 @@ public class PessoaMusicaDao extends BaseDAO {
        List<PessoaMusicaModel> pmd = null;
 
        try{
-           pmd = em.createQuery("from PessoaModel").getResultList();
+           pmd = em.createQuery("from pessoaMusicaModel").getResultList();
 
        }catch (Exception e){
             em.getTransaction().rollback();
