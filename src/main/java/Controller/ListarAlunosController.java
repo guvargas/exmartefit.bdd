@@ -108,12 +108,7 @@ public final class ListarAlunosController {
                     if(listaralunos.getIdAlterarTreino().equals("") || listaralunos.getTituloDoTreino().equals("")){
                         throw new CampoVazioExceptionControler();
                     }
-                    
-                    System.out.println("lendo pessoas");
-                    System.out.println(encontradas);
-                    System.out.println(",,,,");
-                    
-                    System.out.println(pessoas);
+   
                     PessoaDAO outroRepositorio = new PessoaDAO();
                     TreinoDAO treinosRepositorio = new TreinoDAO();
                     List<TreinoModel> treinos = treinosRepositorio.buscarTodos();
@@ -125,7 +120,6 @@ public final class ListarAlunosController {
                         if(listaralunos.getIdAlterarTreino().equals(a)){
                             
                             for (TreinoModel t: treinos ){
-                                System.out.println("lendo treinos");
                                 if(listaralunos.getTituloDoTreino().equals(t.getTitulo())){
                                     
                                     //String.valueOf(t.getID())

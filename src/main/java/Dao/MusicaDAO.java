@@ -26,11 +26,8 @@ public class MusicaDAO extends BaseDAO{
     public void remover(int id){
      MusicasModel m = null;
         try{
-            System.out.println(id);
             em.getTransaction().begin();
            m = em.find(MusicasModel.class,id );
-           System.out.println("--------------------------");
-           System.out.println(m);
            em.remove(m);
            em.getTransaction().commit();
 
